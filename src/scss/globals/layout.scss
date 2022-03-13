@@ -1,0 +1,23 @@
+@import '../util';
+
+.App{
+	width: 70vw;
+	margin: 0 auto;
+}
+
+.content{
+	width: 60vw;
+	margin: 0 auto;
+}
+
+
+@include breakpoint-down(small) {
+	.App{
+		width: 90vw;
+	}
+
+	.content{
+		width: 90vw;
+		
+	}
+}

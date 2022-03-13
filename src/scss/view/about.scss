@@ -1,0 +1,28 @@
+.about{
+    &-heading{
+        text-align: center;
+        font-style: normal;
+        font-weight: normal;
+        font-size: rem(25);
+        line-height: rem(32);
+        letter-spacing: rem(1.6);
+        color: var(--black);
+        margin-top: rem(100);
+    }
+
+
+    &-content{
+        font-family: Source Serif Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: rem(16);
+        line-height: 27px;
+        /* or 169% */
+
+        letter-spacing: 0.03em;
+
+        /* Light Colors/Grey/Grey 2 */
+
+        color: #555555;
+    }
+}

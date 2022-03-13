@@ -1,0 +1,62 @@
+
+.portfolio-card{
+    padding: rem(48) 0;
+    border-bottom: 1px solid var(--neutral-gray);
+
+    time{
+        font-style: normal;
+        font-weight: normal;
+        font-size: rem(12);
+        line-height: rem(14);
+        color: var(---time-gray);
+        margin-bottom: rem(24);
+        display: block;
+    }
+
+    &-content{
+        display: flex;
+        justify-content: space-between;
+        gap: rem(66);
+    }
+
+    h1{
+        font-style: normal;
+        font-weight: normal;
+        font-size: rem(19);
+        line-height: rem(28);
+        color: var(--card-heading-text);
+    }
+
+
+    &-tags{
+        display: flex;
+        gap: 4px;
+        flex-wrap: wrap;
+
+        .tag{
+            background: var(--light-gray);
+            border-radius: 3px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: rem(12);
+            line-height: rem(14);
+            color: #474747;
+            padding: rem(8) rem(16);
+            height: max-content;
+            cursor: pointer;
+        }
+    }
+
+
+    &:last-child{
+        border-bottom: 0;
+    }
+
+
+    @include breakpoint-down(small){
+        &-content{
+            flex-direction: column;
+            gap: rem(24);
+        }
+    }
+}

@@ -1,0 +1,18 @@
+html {
+	font-size: 100%;
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	font-family: var(--font-roboto);
+	letter-spacing: rem(0.03);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+

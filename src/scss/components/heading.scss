@@ -1,0 +1,33 @@
+.head{
+    text-align: center;
+    margin-top: rem(90); 
+    
+    &-title{
+        font-style: normal;
+        font-weight: normal;
+        font-size: rem(25);
+        line-height: rem(32);
+        color: var(--black);
+        font-family: var(--font-overpass);
+    }
+
+    &-categories{
+        display: flex;
+        gap: rem(15);
+        justify-content: center;
+        width: 100%;
+        margin-top: rem(40);
+        margin-bottom: rem(64);
+
+        &-category{
+            display: inline-block;
+            cursor: pointer;
+            font-family: var(--font-overpass);
+
+            &.active{
+                color:var(--link-active)
+            }
+        }
+    }
+
+}

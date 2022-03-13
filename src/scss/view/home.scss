@@ -1,0 +1,30 @@
+.home{
+
+    text-align: center;
+    margin-top: rem(50);
+
+    .me{
+        width: rem(106);
+        height: rem(106);
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    h1{
+        font-style: normal;
+        font-weight: normal;
+        font-size: rem(25);
+        line-height: rem(32);
+        color: var(--black);
+        margin: rem(30) 0 rem(24) 0;
+    }
+
+    h5{
+        font-style: normal;
+        font-weight: normal;
+        font-size: rem(16);
+        line-height: rem(27);
+        margin: 0;
+        color: var(--text-gray);
+    }
+}

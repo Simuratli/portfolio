@@ -1,0 +1,49 @@
+footer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: rem(64);    
+    gap: rem(30);
+    
+    .social{
+        display: flex;
+        gap: rem(25);
+        img{
+            cursor: pointer;
+        }
+    }
+
+    .divider{
+        width: 100%;
+        height: 5px;
+        border-bottom: 1px solid var(--gray);
+        display: flex;
+        justify-content: center;
+
+        .circle{
+            width: rem(10);
+            display: block;
+            height: rem(10);
+            border-radius: 50%;
+            background-color: var(--white);
+            border: 1px solid var(--gray);
+            position: relative;
+            z-index: 0;
+            top: rem(-1);
+        }
+    }
+
+    .belong{
+        font-style: normal;
+        font-weight: normal;
+        font-size: rem(13);
+        line-height: rem(16);
+        color: var(--black);
+
+        a,span{
+            color:var(--text-gray);
+            cursor: pointer;
+        }
+    }
+}
