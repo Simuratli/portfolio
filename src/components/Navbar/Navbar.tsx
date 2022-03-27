@@ -11,10 +11,10 @@ function Navbar() {
         <div className="logo">Simuratli</div>
         <div className="menu">
           <ul className={`menu-list ${open && 'open'}`}>
-            <li className="menu-list-item"><NavLink to='/'>HOME</NavLink></li>
-            <li className="menu-list-item"><NavLink to="/about">ABOUT</NavLink></li>
-            <li className="menu-list-item"><NavLink to="/portfolio">PORTFOLIO</NavLink></li>
-            <li className="menu-list-item"><NavLink to="/blog">BLOG</NavLink></li>
+            <li onClick={() => { setOpen(false) }} className="menu-list-item"><NavLink to='/'>HOME</NavLink></li>
+            <li onClick={() => { setOpen(false) }} className="menu-list-item"><NavLink to="/about">ABOUT</NavLink></li>
+            <li onClick={() => { setOpen(false) }} className="menu-list-item"><NavLink to="/portfolio">PORTFOLIO</NavLink></li>
+            <li onClick={() => { setOpen(false) }} className="menu-list-item"><NavLink to="/blog">BLOG</NavLink></li>
           </ul>
           <img onClick={() => { setOpen(!open) }} className='home-icon' src={Home} alt="home" />
         </div>
