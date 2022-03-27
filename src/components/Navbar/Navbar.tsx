@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import Home from '../../assets/navbar/menu.svg'
-import { useState } from 'react'
+import React,{ useState } from 'react'
 
 function Navbar() {
   const [open, setOpen] = useState(false)
@@ -23,4 +23,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default React.memo(Navbar)

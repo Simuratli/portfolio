@@ -1,16 +1,20 @@
-import FacebookImage from '../../assets/footer/facebook.svg'
+import FacebookImage from '../../assets/footer/github.png'
 import TwitterImage from '../../assets/footer/twitter.svg'
 import LinkedinImage from '../../assets/footer/linkedin.svg'
 import GoogleImage from '../../assets/footer/google.svg'
-
+import { useSelector } from 'react-redux'
 function Footer() {
+
+  const aboutState = useSelector((state: any) => state.aboutReducer)
+
+
   return (
     <footer>
       <div className="social">
-        <img src={TwitterImage} alt="Twitter" />
-        <img src={FacebookImage} alt="Twitter" />
-        <img src={GoogleImage} alt="Twitter" />
-        <img src={LinkedinImage} alt="Twitter" />
+        <a target="_blank" rel="noreferrer" href={aboutState && aboutState.twitter}><img src={TwitterImage} alt="Twitter" /></a>
+        <a target="_blank" rel="noreferrer" href={aboutState && aboutState.Github}><img width={20} src={FacebookImage} alt="Twitter" /></a>
+        <a target="_blank" rel="noreferrer" href={aboutState && `mailto:${aboutState.google}`}><img src={GoogleImage} alt="Twitter" /></a>
+        <a target="_blank" rel="noreferrer" href={aboutState && aboutState.linkedin}><img src={LinkedinImage} alt="Twitter" /></a>
       </div>
       <div className='divider'>
         <span className="circle"></span>

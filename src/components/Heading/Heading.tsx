@@ -1,4 +1,5 @@
 import { HeadingPropTypes } from './heading.types'
+import React from 'react'
 
 function Heading({ title, haveCategory }:HeadingPropTypes) {
     return (
@@ -16,4 +17,4 @@ function Heading({ title, haveCategory }:HeadingPropTypes) {
     )
 }
 
-export default Heading
+export default React.memo(Heading)
