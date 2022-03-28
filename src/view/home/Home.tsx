@@ -45,12 +45,12 @@ function Home() {
         <Ticker move={!isHover} speed={5}>
           {() => (
             <div className='ticker__item'>
-              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> + front-end developer + </p>
-              {/* <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> <span className="dot"></span></p> */}
-              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> + anime lover + </p>
-              {/* <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> <span className="dot"></span></p> */}
-              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> + junior graphic designer + </p>
-              {/* <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> <span className="dot"></span></p> */}
+              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> front-end developer </p>
+              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> <span className="dot"></span></p>
+              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text">anime lover </p>
+              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> <span className="dot"></span></p>
+              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text">junior graphic designer </p>
+              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> <span className="dot"></span></p>
             </div>
           )}
         </Ticker>
