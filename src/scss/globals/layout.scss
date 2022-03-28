@@ -1,5 +1,9 @@
 @import '../util';
 
+body{
+	overflow-x: hidden;
+}
+
 .App{
 	width: 70vw;
 	margin: 0 auto;
