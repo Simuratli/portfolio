@@ -50,10 +50,14 @@
 }
 
 .ticker__item {
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-  width: rem(1000);
+//   display: flex;
+//   gap: 20px;
+//   justify-content: space-between;
+  width: rem(800);
+
+  p{
+      display: inline-block;
+  }
 }
 
 .ticker__text {
@@ -66,6 +70,6 @@
     width: 20px;
     border-radius: 50%;
     position: relative;
-    top: 2px;
+    top: 6px;
   }
 }
