@@ -1,67 +1,67 @@
-header{
-    margin-top: rem(22);
+header {
+  margin-top: rem(22);
 
-    nav{
-        display: flex;
-        justify-content: space-between;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      a {
+        color: var(--black);
+        font-size: rem(20);
+      }
+    }
+
+    .menu-list {
+      display: flex;
+      gap: rem(39);
+      text-decoration: none;
+      list-style: none;
+      &-item a {
+        font-style: normal;
+        font-weight: normal;
+        font-size: rem(16);
+        line-height: rem(32);
+        color: var(--black);
+        &.active {
+          color: var(--link-active);
+        }
+      }
+    }
+
+    .home-icon {
+      margin-top: rem(6);
+      display: none;
+      cursor: pointer;
+      position: relative;
+      z-index: 1000;
+    }
+  }
+
+  @include breakpoint-down(small) {
+    nav {
+      .menu-list {
+        position: fixed;
+        top: -100vh;
+        transition: 0.3s ease-in-out;
+        flex-direction: column;
+        left: 0;
+        background-color: var(--white);
+        width: 100%;
+        padding: 0;
+        height: 100vh;
         align-items: center;
-        
-        .logo{
-            color: (--black);
-            font-size: rem(20);
+        justify-content: center;
+        &.open {
+          top: 0;
+          z-index: 1000;
         }
+      }
 
-        .menu-list{
-            display: flex;
-            gap: rem(39);
-            text-decoration: none;
-            list-style: none;
-            &-item a{
-                font-style: normal;
-                font-weight: normal;
-                font-size: rem(16);
-                line-height: rem(32);
-                color:var(--black);
-                &.active{
-                    color: var(--link-active);
-                }
-            }
-        }
-
-        .home-icon{
-            margin-top: rem(6);
-            display: none;
-            cursor: pointer;
-            position: relative;
-            z-index: 1000;
-        }
+      .home-icon {
+        display: block;
+      }
     }
-
-
-    @include breakpoint-down(small) {
-        nav{
-            .menu-list{
-                position: fixed;
-                top: -100vh;
-                transition: 0.3s ease-in-out;
-                flex-direction: column;
-                left: 0;
-                background-color: var(--white);
-                width: 100%;
-                padding: 0;
-                height: 100vh;
-                align-items: center;
-                justify-content: center;
-                &.open{
-                    top: 0;
-                    z-index: 1000;
-                }
-            }
-
-    
-            .home-icon{
-                display: block;
-            }
-        }
-    }
+  }
 }

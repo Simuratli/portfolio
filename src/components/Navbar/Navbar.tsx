@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <header>
       <nav>
-        <div className="logo">Simuratli</div>
+        <div className="logo"><NavLink to='/'>Simuratli</NavLink></div>
         <div className="menu">
           <ul className={`menu-list ${open && 'open'}`}>
             <li onClick={() => { setOpen(false) }} className="menu-list-item"><NavLink to='/'>HOME</NavLink></li>
