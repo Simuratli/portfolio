@@ -3,6 +3,8 @@ import TwitterImage from '../../assets/footer/twitter.svg'
 import LinkedinImage from '../../assets/footer/linkedin.svg'
 import GoogleImage from '../../assets/footer/google.svg'
 import { useSelector } from 'react-redux'
+import React from 'react'
+
 function Footer() {
 
   const aboutState = useSelector((state: any) => state.aboutReducer)
@@ -24,4 +26,4 @@ function Footer() {
   )
 }
 
-export default Footer
+export default React.memo(Footer)

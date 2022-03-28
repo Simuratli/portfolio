@@ -16,4 +16,4 @@ function PortfolioCard() {
   )
 }
 
-export default PortfolioCard
+export default React.memo(PortfolioCard)

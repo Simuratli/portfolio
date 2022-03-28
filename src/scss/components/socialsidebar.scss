@@ -1,0 +1,19 @@
+.social__networks__sidebar{
+    position: fixed;
+    right: rem(40);
+    top: 45%;
+    display: flex;
+    gap: rem(10);
+    flex-direction: column;
+
+    svg{
+        height: rem(24);
+    }
+}
+
+
+@include breakpoint-down(medium){
+    .social__networks__sidebar{
+       display: none !important;
+    }
+}

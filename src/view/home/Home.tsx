@@ -1,9 +1,11 @@
-import { useEffect, useState, useCallback } from 'react'
+import React,{ useEffect, useState, useCallback } from 'react'
 import { fetchAbout } from '../../client/api'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAboutData } from '../../redux/actions'
 import Ticker from 'react-ticker'
 import { motion } from "framer-motion";
+import { container, item } from './home.animations'
+import { tickerData } from './home.data'
 
 function Home() {
   const dispatch = useDispatch()
@@ -16,25 +18,6 @@ function Home() {
         dispatch(getAboutData(data))
       })
   }, [])
-
-
-  const container = {
-    hidden: {  },
-    visible: {
-      transition: {
-        delayChildren: 0.5,
-        staggerChildren: 0.6
-      }
-    }
-  };
-
-  const item = {
-    hidden: { opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1
-    }
-  };
 
 
 
@@ -52,7 +35,6 @@ function Home() {
     [],
   )
 
-
   return (
     <section className='home'>
 
@@ -66,19 +48,20 @@ function Home() {
         <Ticker move={!isHover} speed={5}>
           {() => (
             <div className='ticker__item'>
-              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> front-end developer </p>
-              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> <span className="dot"></span></p>
-              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text">anime lover </p>
-              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> <span className="dot"></span></p>
-              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text">junior graphic designer </p>
-              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> <span className="dot"></span></p>
+              {
+                tickerData.map((text) => {
+                  return <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> {text} <span className="dot"></span></p>
+                })
+              }
             </div>
           )}
         </Ticker>
       </div>
 
+
+
     </section>
   )
 }
 
-export default Home
+export default React.memo(Home)

@@ -1,0 +1,1 @@
+export const tickerData = ['front-end developer', 'junior ui/ux designer', 'anime lover', 'bookworm']

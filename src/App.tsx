@@ -1,4 +1,4 @@
-import { Navbar, Footer } from './components'
+import { Navbar, Footer, SocialMediaSidebar } from './components'
 import { Home, About, Portfolio, Blog, BlogContent } from './view'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
@@ -7,6 +7,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar />
+        <SocialMediaSidebar/>
         <div className="content">
           <Routes>
             <Route element={<Home />} path="/" />
