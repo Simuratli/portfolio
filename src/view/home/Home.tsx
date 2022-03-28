@@ -3,6 +3,7 @@ import { fetchAbout } from '../../client/api'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAboutData } from '../../redux/actions'
 import Ticker from 'react-ticker'
+import { motion } from "framer-motion";
 
 function Home() {
   const dispatch = useDispatch()
@@ -15,6 +16,26 @@ function Home() {
         dispatch(getAboutData(data))
       })
   }, [])
+
+
+  const container = {
+    hidden: {  },
+    visible: {
+      transition: {
+        delayChildren: 0.5,
+        staggerChildren: 0.6
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1
+    }
+  };
+
 
 
   let onMouseLeave = useCallback(
@@ -36,11 +57,11 @@ function Home() {
     <section className='home'>
 
       <div className="home__main">
-        <h1>
-          Eljan
+        <motion.h1 variants={container} initial="hidden" animate="visible"  >
+          <motion.span variants={item}>Eljan</motion.span>
           <br />
-          Simuratli
-        </h1>
+          <motion.span variants={item}>Simuratli.</motion.span>
+        </motion.h1>
 
         <Ticker move={!isHover} speed={5}>
           {() => (
