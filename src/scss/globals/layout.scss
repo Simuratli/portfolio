@@ -6,7 +6,7 @@
 }
 
 .content{
-	// width: 60vw;
+	width: 60vw;
 	margin: 0 auto;
 }
 
@@ -18,6 +18,17 @@
 
 	.content{
 		width: 90vw;
+		
+	}
+}
+
+@include breakpoint-down(medium) {
+	.App{
+		width: 90vw;
+	}
+
+	.content{
+		width: 100vw;
 		
 	}
 }

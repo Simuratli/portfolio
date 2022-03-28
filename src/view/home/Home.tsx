@@ -30,34 +30,34 @@ function Home() {
     },
     [],
   )
-  
+
 
   return (
     <section className='home'>
-      {/* <img className='me' src={aboutState && aboutState.mainImage} alt="Eljan Simuratli" />
-      <h1>Hello. I'm {aboutState && aboutState.name}</h1>
-      <h5>{aboutState && aboutState.speciality}</h5> */}
-      <h1>
-        Eljan
-        <br />
-        Simuratli
-      </h1>
 
-      <Ticker move={!isHover} speed={5}>
-        {() => (
-          <div className='ticker__item'>
-            <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> front-end developer </p>
-            <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> <span className="dot"></span></p>
-            <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text">anime lover </p>
-            <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> <span className="dot"></span></p>
-            <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text">junior graphic designer </p>
-            <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> <span className="dot"></span></p>
-          </div>
-        )}
-      </Ticker>
+      <div className="home__main">
+        <h1>
+          Eljan
+          <br />
+          Simuratli
+        </h1>
+
+        <Ticker move={!isHover} speed={5}>
+          {() => (
+            <div className='ticker__item'>
+              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> front-end developer </p>
+              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> <span className="dot"></span></p>
+              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text">anime lover </p>
+              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> <span className="dot"></span></p>
+              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text">junior graphic designer </p>
+              <p onMouseOver={onMouseEnter} onMouseLeave={onMouseLeave} className="ticker__text"> <span className="dot"></span></p>
+            </div>
+          )}
+        </Ticker>
+      </div>
 
     </section>
   )
-  }
+}
 
-  export default Home
+export default Home

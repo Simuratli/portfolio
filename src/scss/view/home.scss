@@ -1,21 +1,22 @@
 .home {
   text-align: center;
-  margin-top: rem(50);
+  min-height: 100vh;
+ 
 
-  .me {
-    width: rem(106);
-    height: rem(106);
-    object-fit: cover;
-    border-radius: 50%;
+  &__main {
+    display: grid;
+    place-content: center;
+    height: 100vh;
   }
 
   h1 {
     font-style: normal;
-    font-weight: 800;
-    font-size: rem(180);
+    font-size: 12.7vw;
     line-height: 88.6%;
     text-align: left;
+    font-weight: bolder;
     margin-bottom: rem(20);
+    font-family: var(--font-overpass);
   }
 
   h5 {
@@ -29,26 +30,32 @@
 
   @include breakpoint-down(medium) {
     h1 {
-      font-size: rem(100);
+    //   font-size: rem(100);
+    }
+
+    &__main {
+      display: block;
+      height: 100vh;
+      margin-top: 15vh;
     }
   }
 
   @include breakpoint-down(small) {
     h1 {
-      font-size: rem(60);
+    //   font-size: rem(60);
     }
   }
 }
 
-.ticker__item{
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
-    width: rem(800);
+.ticker__item {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  width: rem(800);
 }
 
 .ticker__text {
-    text-align: center;
+  text-align: center;
   span {
     display: inline-block;
     background-color: var(--black);
