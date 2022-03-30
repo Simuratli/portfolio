@@ -47,6 +47,12 @@
   font-size: 16px;
 }
 
+@include breakpoint-down(small){
+  .circle{
+    display: none
+  }
+}
+
 .cursorText{
   position: relative;
   top: 30px;
