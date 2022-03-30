@@ -1,21 +1,21 @@
 .home {
   text-align: center;
-  min-height: 100vh;
 
   &__main {
     display: grid;
     place-content: center;
-    height: 80vh;
-  }
+    min-height: 100vh;
 
-  h1 {
-    font-style: normal;
-    font-size: 11.7vw;
-    line-height: 88.6%;
-    text-align: left;
-    font-weight: bolder;
-    margin-bottom: rem(20);
-    font-family: var(--font-overpass);
+    &__name {
+      font-style: normal;
+      font-size: 11.7vw;
+      line-height: 88.6%;
+      text-align: left;
+      font-weight: bolder;
+      width: max-content;
+      margin-bottom: rem(20);
+      font-family: var(--font-overpass);
+    }
   }
 
   h5 {
@@ -28,21 +28,18 @@
   }
 
   @include breakpoint-down(medium) {
-
     &__main {
       display: block;
-      height: 100vh;
+      min-height: 50vh !important;
       margin-top: 15vh;
     }
   }
-
- 
 }
 
 .ticker__item {
-  min-width: rem(800);
-  p{
-      display: inline-block;
+  min-width: rem(1000);
+  p {
+    display: inline-block;
   }
 }
 

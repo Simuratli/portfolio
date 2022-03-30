@@ -1,0 +1,54 @@
+.connect {
+  height: 80vh;
+  display: grid;
+  place-content: center left;
+  text-align: left;
+
+  &__container {
+    width: fit-content;
+    text-align: left;
+  }
+
+  &__heading {
+    font-size: rem(20);
+    text-align: left;
+    margin-bottom: rem(40) !important;
+  }
+
+  &__mail {
+    font-size: 6vw;;
+    word-break: break-all;
+    width: max-content;
+  }
+
+  @include breakpoint-down(medium) {
+    min-height: 20vh;
+    
+  }
+
+}
+
+.circle{
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 10px;
+  width: 10px;
+  background-color: #1e91d6;
+  border-radius: 200px;
+  pointer-events: none;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+}
+
+.cursorText{
+  position: relative;
+  top: 30px;
+  font-weight: bold;
+}
