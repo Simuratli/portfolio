@@ -1,35 +1,59 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import { Loader } from '../../components'
+import { useParams } from 'react-router-dom';
+import { fetchIndividualBlog } from '../../client/api'
+import { IndividualBlogApiType } from '../../client/api.types'
+import { PortableText } from '@portabletext/react';
+import { urlFor } from '../../client'
 
 function BlogContent() {
-  return (
-    <div className='blog-content'>
-        <div className="blog-content-left">
-            <h1 className='blog-content-heading'>Hello world!</h1>
-            <img className='blog-content-heading-image' src="https://9xwallpapers.com/wp-content/uploads/2021/06/Demon-Slayer-Computer-Wallpaper.jpg" alt="" />
-            <div className='blog-content-text'>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt culpa saepe odio architecto dolor quisquam qui hic odit cum deleniti numquam eaque magni, sit ipsam molestiae sunt. Exercitationem repudiandae eligendi voluptates nihil fuga dicta aliquam temporibus optio error? At inventore omnis id asperiores sint sequi maiores iure voluptatibus, veritatis exercitationem quae adipisci, quod quasi eum quos distinctio reprehenderit dolorum dolorem assumenda. Reprehenderit accusamus perspiciatis sunt magni libero tempora laboriosam exercitationem nulla corrupti. Rerum ducimus pariatur aperiam, illo alias harum unde libero vero odit, ea maiores iure omnis numquam magni possimus! Impedit ad vero quia saepe illo laboriosam modi minus libero! Ipsum voluptatem tenetur, non, minus, iusto nam voluptate asperiores at natus corporis sequi consequatur facilis tempora aliquam animi quidem aspernatur rerum. Placeat, possimus maxime. Optio ut possimus porro rerum expedita voluptatibus sed inventore. Accusamus amet nam totam explicabo. Praesentium quo aliquam deleniti reprehenderit ut dolor maxime eius assumenda, officiis iure? Dolores aperiam minima vel magni repudiandae! Expedita sunt ea optio architecto, autem asperiores veritatis maiores fugit modi accusantium laborum illum perferendis beatae tenetur ut perspiciatis cumque officia dolorem ipsum aperiam eaque at aspernatur ratione! Aspernatur quos minus maxime assumenda suscipit eos mollitia sapiente obcaecati similique. Nostrum excepturi quidem accusantium fuga commodi. Magnam pariatur sapiente distinctio voluptas illum ex eius iste alias similique ipsa commodi ullam sit ab rerum debitis numquam magni dolore harum quibusdam esse consectetur, perspiciatis incidunt quos suscipit. Voluptatem placeat totam maiores, repudiandae fugit, molestias sequi autem minima voluptate delectus quidem debitis temporibus officia omnis aut ipsam ipsa neque. Accusantium deleniti illo eius quisquam expedita, aliquam quam quo exercitationem sed illum nobis nihil voluptatibus! Et blanditiis repellat soluta nemo necessitatibus, provident officiis voluptatibus non dolorem, voluptate vel, possimus nesciunt. Ullam quia odit aperiam esse atque fugiat cumque, similique consequuntur? Nemo, quas odio quos vitae magnam iusto tenetur odit illum fugiat ut aspernatur autem voluptas deleniti vel iure ea inventore nihil illo deserunt harum! Quibusdam velit ullam natus veniam ducimus sint culpa, vero temporibus aspernatur, quas reprehenderit expedita, quaerat eligendi soluta pariatur ipsum nisi quam. Ad animi debitis, consequatur mollitia expedita magnam at dicta nostrum fugiat. Veniam autem eaque labore impedit architecto suscipit officia dolorum, ipsam eius quo, minus sunt quasi! Labore dolores maxime assumenda voluptates eum, autem earum aliquam, optio error vitae eius iste debitis doloribus tempore. Autem sequi adipisci, animi et aliquid eum! Numquam consequuntur optio nisi nostrum distinctio officiis! Nam, quae sed, in a cupiditate praesentium incidunt dolores tenetur facilis sunt labore soluta amet tempora quo alias necessitatibus! Praesentium asperiores ratione itaque laborum delectus aperiam voluptates ipsa molestias quidem. Alias, itaque optio, quis provident sint quam doloremque assumenda ratione aliquam iusto voluptatibus blanditiis beatae aperiam quos ut vero autem quae quasi exercitationem explicabo cumque. Quibusdam aliquam porro molestiae deserunt, labore doloremque veritatis rem similique repellendus necessitatibus laudantium quis? Dolores voluptates dolorem veritatis cum enim voluptate impedit, consequatur perspiciatis id nesciunt reiciendis, architecto ratione error animi nostrum dolorum suscipit inventore nihil nulla eius! Mollitia at tempora consectetur rerum ad, accusantium est aut, praesentium nisi libero in reprehenderit? Sint expedita praesentium fugiat, quis vel distinctio libero odit alias corporis enim ex quia minima impedit quaerat quasi doloremque ut officiis modi sed. Quo, dignissimos quod? Esse, nostrum. Aperiam, omnis veritatis tempore accusantium, possimus nihil deserunt eaque ut amet, odio iusto repudiandae molestiae magnam dolore perspiciatis excepturi eius fuga assumenda a exercitationem quisquam adipisci? Perferendis a molestias omnis numquam natus veritatis enim doloremque sint blanditiis deserunt, saepe expedita accusantium magnam iusto corporis repudiandae temporibus delectus ipsam praesentium alias at non quaerat quisquam pariatur. Exercitationem deleniti, fugit consequuntur ratione ex, recusandae molestiae soluta non laborum nihil similique iure tempora tenetur, sapiente commodi perspiciatis aliquid obcaecati. Animi beatae magni qui, magnam rem consequuntur repellat laborum reiciendis ipsam. Earum a praesentium similique quo magnam. Dolores, quos quibusdam! Quibusdam, veritatis. Perspiciatis, praesentium omnis mollitia et esse consectetur sint at eos, cum repellendus voluptate doloribus exercitationem quae voluptatem deserunt provident aspernatur voluptates possimus ea harum, inventore necessitatibus recusandae itaque saepe! Ipsum doloremque debitis velit quisquam consequuntur ea vero enim natus cupiditate nulla vel, culpa ducimus atque eum, error recusandae ullam rerum ratione adipisci hic nisi quae laudantium! Voluptatum deleniti adipisci atque, odio quo molestias, delectus, ad quae ullam nobis quam vitae officia optio praesentium aperiam est assumenda fugit neque blanditiis dicta cum debitis? Quo modi alias rerum. Quo dolorem eos, doloribus ipsa iure assumenda quidem incidunt? Illum, aut maxime. Nesciunt fugit sed nulla tenetur vitae, accusantium earum autem velit repellendus illum consectetur quisquam nobis veritatis facilis, neque magni hic quae odio exercitationem fuga omnis. Eligendi voluptate nisi itaque mollitia! Facilis dolorem dicta cum error quod delectus voluptate repudiandae debitis explicabo obcaecati eveniet, enim saepe inventore magnam neque beatae maxime ab asperiores nulla animi possimus! Praesentium quis architecto eligendi? Earum, blanditiis exercitationem vitae ipsa ipsam voluptatum asperiores incidunt debitis minima. Unde, modi dolore quo doloribus tenetur assumenda nobis asperiores eius fugit, laboriosam ut, sunt alias nesciunt ipsa nemo consectetur aliquam non itaque iure architecto quos? Ducimus hic, harum asperiores atque voluptatum pariatur aspernatur distinctio consequuntur? Sit deserunt, veritatis debitis quia totam harum iure impedit dolor, minus reiciendis, ipsam laborum ut maxime! Alias fuga aut iste. Quae, magni sapiente. Eos aperiam rem a eius. Temporibus dicta voluptates quaerat aperiam debitis soluta, eos ut consectetur nemo, dolor illo quia quae, ratione eaque ducimus explicabo alias ad. At molestiae sunt asperiores quas iure accusamus ullam vero libero quo dolores rem aliquid deserunt dolorem, iusto amet eos sit pariatur architecto a, impedit laboriosam voluptates ipsa quasi. Est sed architecto totam dicta, non, obcaecati explicabo dolorum expedita voluptatibus asperiores quidem doloribus cumque, quaerat ut debitis ipsum. Doloremque excepturi maiores aliquam placeat possimus nemo fuga itaque sint illo, vero at quis blanditiis officiis enim eaque id, sequi labore deleniti tempore molestias velit delectus doloribus rerum quam! Quibusdam ab excepturi voluptatibus dicta. Beatae, ratione. Placeat eaque libero alias voluptates deserunt ex, minus pariatur natus, animi ullam facere commodi fugit esse accusamus soluta optio! Aspernatur fugit veritatis incidunt nesciunt, dignissimos a vero quod voluptates consequatur dolores qui libero odio dolorum sint cupiditate quisquam consectetur?</p>
-            </div>
-        </div>
-        <div className="blog-content-right">
-            <div className='blog-content-right-item'>
-                <h5>Categories</h5>
-                <p>All</p>
-                <p>Visual</p>
-                <p>Branding</p>
-            </div>
 
-            <div className='blog-content-right-item'>
-                <h5>Tags</h5>
-                <div className="tags">
-                    <span>#Visual</span>
-                    <span>#Design</span>
-                    <span>#Brand</span>
+    const [blogData, setblogData] = useState<IndividualBlogApiType>({
+        category: ['Loading..', 'Loading..'],
+        description: 'test',
+        name: "Loading...",
+        tags: ['Loading..', 'Loading..']
+    })
+
+    const [loader, setloader] = useState(true)
+
+    const params = useParams()
+
+    useEffect(() => {
+        console.log(params, 'params')
+        fetchIndividualBlog(params.id).then((data) => setblogData(data))
+        setloader(false)
+    }, [])
+
+
+    return (
+        <div className='blog-content'>
+            <div className="blog-content-left">
+                <h1 className='blog-content-heading'>{blogData.name}</h1>
+                <img className='blog-content-heading-image' src={blogData.mainImage && urlFor(blogData.mainImage)} alt="" />
+                <div className='blog-content-text'>
+                    <PortableText
+                        value={blogData.description}
+                    />
                 </div>
             </div>
+            {loader && <Loader/>}
+            <div className="blog-content-right">
+                <div className='blog-content-right-item'>
+                    <h5>Categories</h5>
+                    {blogData.category.map((cat) => <p>{cat}</p>)}
+                </div>
 
+                <div className='blog-content-right-item'>
+                    <h5>Tags</h5>
+                    <div className="tags">
+                        {blogData.tags && blogData.tags.map((tag) => <span>#{tag}</span>)}
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default BlogContent

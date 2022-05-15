@@ -78,30 +78,33 @@ function App() {
 
   return (
     <div className="App" ref={ref}>
-      <BrowserRouter>
-        <Navbar />
-        <motion.div
-          variants={variants}
-          className="circle"
-          animate={cursorState.cursorVariant}
-          transition={spring}
-        >
-          <span className="cursorText">{cursorState.cursorText}</span>
-          {cursorState.cursorImage !== "" && <img src={cursorState.cursorImage} alt="me" />}
+      <div className="main__app__container">
+        <BrowserRouter>
+          <Navbar />
+          <motion.div
+            variants={variants}
+            className="circle"
+            animate={cursorState.cursorVariant}
+            transition={spring}
 
-        </motion.div>
-        <SocialMediaSidebar />
-        <div className="content">
-          <Routes>
-            <Route element={<Home />} path="/" />
-            <Route element={<About />} path="/about" />
-            <Route element={<Portfolio />} path="/portfolio" />
-            <Route element={<Blog />} path="/blog" />
-            <Route element={<BlogContent />} path="/blog/:id" />
-          </Routes>
-        </div>
-        <Footer />
-      </BrowserRouter>
+          >
+            <span className="cursorText">{cursorState.cursorText}</span>
+            {cursorState.cursorImage !== "" && <img src={cursorState.cursorImage} alt="me" />}
+
+          </motion.div>
+          <SocialMediaSidebar />
+          <div className="content">
+            <Routes>
+              <Route element={<Home />} path="/" />
+              <Route element={<About />} path="/about" />
+              <Route element={<Portfolio />} path="/portfolio" />
+              <Route element={<Blog />} path="/blog" />
+              <Route element={<BlogContent />} path="/blog/:id" />
+            </Routes>
+          </div>
+          <Footer />
+        </BrowserRouter>
+      </div>
     </div>
   );
 }

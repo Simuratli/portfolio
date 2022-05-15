@@ -1,0 +1,24 @@
+.imagedCard{
+    width: 100%;
+
+    img{
+        width: 100%;
+        object-fit: cover;
+        height: rem(300);
+        object-position: center;
+    }
+
+
+    a{
+        padding: rem(20) rem(0);
+        display: block;
+        color: var(--card-heading-text);
+        font-size: rem(18);
+        font-weight: bold;
+    }
+
+    p{
+        width: 100%;
+        color: var(--card-heading-text);
+    }
+}

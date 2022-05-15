@@ -4,7 +4,7 @@ body{
 	overflow-x: hidden;
 }
 
-.App{
+.main__app__container{
 	width: 70vw;
 	margin: 0 auto;
 }
@@ -16,18 +16,18 @@ body{
 
 
 @include breakpoint-down(small) {
-	.App{
+	.main__app__container{
 		width: 90vw;
 	}
 
-	.content{
+	.main__app__container{
 		width: 90vw;
 		
 	}
 }
 
 @include breakpoint-down(medium) {
-	.App{
+	.main__app__container{
 		width: 90vw;
 	}
 }
