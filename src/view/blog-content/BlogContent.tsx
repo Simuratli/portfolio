@@ -5,6 +5,7 @@ import { fetchIndividualBlog } from '../../client/api'
 import { IndividualBlogApiType } from '../../client/api.types'
 import { PortableText } from '@portabletext/react';
 import { urlFor } from '../../client'
+import { Helmet } from "react-helmet";
 
 function BlogContent() {
 
@@ -28,6 +29,19 @@ function BlogContent() {
 
     return (
         <div className='blog-content'>
+
+            <Helmet>
+                <title>{blogData.name} </title>
+                <meta property="og:title" content={blogData.name} />
+                <meta property="og:type" content={blogData.name}  />
+                <meta property="og:url" content="https://simuratli.vercel.app/blog" />
+                <meta property="og:image" content="hhttps://imgur.com/a/WMe4A41" />
+                <meta name="twitter:title" content={blogData.name}  />
+                <meta name="twitter:description" content={blogData.description} />
+                <meta name="twitter:image" content="https://imgur.com/a/WMe4A41" />
+                <meta name="twitter:card" content="https://imgur.com/a/WMe4A41" />
+            </Helmet>
+
             <div className="blog-content-left">
                 <h1 className='blog-content-heading'>{blogData.name}</h1>
                 <img className='blog-content-heading-image' src={blogData.mainImage && urlFor(blogData.mainImage)} alt="" />
@@ -37,7 +51,7 @@ function BlogContent() {
                     />
                 </div>
             </div>
-            {loader && <Loader/>}
+            {loader && <Loader />}
             <div className="blog-content-right">
                 <div className='blog-content-right-item'>
                     <h5>Categories</h5>
