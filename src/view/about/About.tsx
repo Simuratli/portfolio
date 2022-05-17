@@ -27,12 +27,12 @@ function About() {
                 <meta property="og:title" content="About Simuratli Eljan" />
                 <meta property="og:type" content="about page" />
                 <meta property="og:url" content="https://simuratli.vercel.app/about" />
-                <meta property="og:image" content="https://imgur.com/a/BPhaWce" />
+                <meta property="og:image" content="https://i.imgur.com/XKG6XBP.png" />
 
                 <meta name="twitter:title" content="About Simuratli Eljan" />
                 <meta name="twitter:description" content="About Simuratli Eljan." />
-                <meta name="twitter:image" content="https://imgur.com/a/BPhaWce" />
-                <meta name="twitter:card" content="https://imgur.com/a/BPhaWce" />
+                <meta name="twitter:image" content="https://i.imgur.com/XKG6XBP.png" />
+                <meta name="twitter:card" content="https://i.imgur.com/XKG6XBP.png" />
 
             </Helmet>
 

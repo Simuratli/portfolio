@@ -19,11 +19,11 @@ function Blog() {
                 <meta property="og:title" content="Simuratli Eljan Blog Posts" />
                 <meta property="og:type" content="Simuratli Eljan Blog Posts" />
                 <meta property="og:url" content="https://simuratli.vercel.app/blog" />
-                <meta property="og:image" content="hhttps://imgur.com/a/WMe4A41" />
+                <meta property="og:image" content="https://i.imgur.com/H3UbLs8.png" />
                 <meta name="twitter:title" content="Simuratli Eljan Blog Posts" />
                 <meta name="twitter:description" content="Simuratli Eljan Blog Posts" />
-                <meta name="twitter:image" content="https://imgur.com/a/WMe4A41" />
-                <meta name="twitter:card" content="https://imgur.com/a/WMe4A41" />
+                <meta name="twitter:image" content="https://i.imgur.com/H3UbLs8.png" />
+                <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
 
             <Heading title="Blog" haveCategory={false} />
