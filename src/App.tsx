@@ -77,7 +77,7 @@ function App() {
 
 
   return (
-    <div className="App" ref={ref}>
+    <div className="App" >
       <div className="main__app__container">
         <BrowserRouter>
           <Navbar />
