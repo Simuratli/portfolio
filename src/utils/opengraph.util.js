@@ -78,8 +78,8 @@ const CatMeme = ({ src, name }) => {
   }, [src, canvase, imageee, canvas]);
 
   return (
-    <div>
-      <div>
+    <div style={{position:"absolute" , visibility:'hidden'}}>
+      <div >
         <canvas id="canvas" ref={canvas} width={1200} height={630} />
       </div>
 

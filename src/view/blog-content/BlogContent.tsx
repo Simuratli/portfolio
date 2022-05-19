@@ -36,6 +36,7 @@ function BlogContent() {
         <div className='blog-content'>
             <Canvas name={blogData.name} src={blogData.mainImage && urlFor(blogData.mainImage)} />
             {/* <canvas id="canvas" ref={canvas} width={1200} height={630} /> */}
+            <img src={test} alt="" />
             <Helmet>
                 <title>{blogData.name} </title>
                 <meta property="og:title" content={blogData.name} />
