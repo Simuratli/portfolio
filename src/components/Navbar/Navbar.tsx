@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Star from "../../assets/star";
-import Logo from "../../assets/images/logo.svg";
 import { useNavbar } from "../../hooks/useNavbar";
+import Logo from "../Logo";
 const Navbar = () => {
   const { openNavbar, setOpenNavbar } = useNavbar();
   return (
@@ -17,10 +17,7 @@ const Navbar = () => {
         <span className="navbar__borderDot"></span>
         <span className="navbar__borderDot"></span>
         <div className="navbar__logo">
-          <NavLink to="/">
-            <img src={Logo} alt="Star" />
-            simuratli
-          </NavLink>
+          <Logo />
 
           <div
             onClick={() => {
