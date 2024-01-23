@@ -32,13 +32,19 @@ const Navbar = () => {
         </div>
         <div className="navbar__element__container">
           <div className="navbar__element">
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/about">
+              <mark>About</mark>
+            </NavLink>
           </div>
           <div className="navbar__element">
-            <NavLink to="/portfolio">Portfolio</NavLink>
+            <NavLink to="/portfolio">
+              <mark>Portfolio</mark>
+            </NavLink>
           </div>
           <div className="navbar__element">
-            <NavLink to="/hire">Hire Me</NavLink>
+            <NavLink to="/hire">
+              <mark>Hire Me</mark>
+            </NavLink>
           </div>
         </div>
       </div>

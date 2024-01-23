@@ -1,0 +1,16 @@
+.header {
+  color: $black;
+  -webkit-text-stroke-width: 3;
+  -webkit-text-stroke-color: #000;
+  font-family: "Space Grotesk";
+  font-size: clamp(30px, 5vw, 80px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  mark {
+    display: inline-block;
+    line-height: 0em;
+    padding-bottom: 0.5em;
+  }
+}

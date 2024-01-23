@@ -1,0 +1,25 @@
+.hero {
+  min-height: 50vh;
+  padding: 70px 80px;
+  display: flex;
+  justify-content: space-between;
+
+  &__sun {
+    @media screen and (max-width: $tablet) {
+      width: 79px;
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
+  }
+}

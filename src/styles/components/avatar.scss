@@ -1,0 +1,22 @@
+.avatar {
+  display: flex;
+  flex-direction: column;
+
+  &__arrow {
+    position: relative;
+    left: 100px;
+    width: 309px;
+
+    @media screen and (max-width: $tablet) {
+      width: 167px;
+      top: 50px;
+      left: 70px;
+    }
+  }
+
+  &__profile {
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+    }
+  }
+}

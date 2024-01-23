@@ -2,6 +2,7 @@
   padding: 83px 20px;
   border-bottom: 4px solid $black;
   width: 100%;
+  transition: 0.4s ease;
 
   &__mobile {
     width: 100%;
@@ -9,7 +10,7 @@
     position: fixed;
     z-index: 100;
     top: 0;
-    transition: 0.3s ease;
+    transition: 0.1s ease;
     background: $paper;
     left: -100%;
 
@@ -87,19 +88,16 @@
       line-height: normal;
       z-index: 2;
       position: relative;
+      mark {
+        background: transparent;
+      }
       &.active {
         position: relative;
-        &::before {
-          content: "";
-          background-color: $yellow;
-          width: 90%;
-          height: 15px;
-          opacity: 0.5;
-          position: absolute;
-          border-color: black;
-          z-index: 1;
-          bottom: 3px;
-          border-radius: 2px;
+        mark {
+          background: $yellow;
+          display: inline-block;
+          line-height: 0em;
+          padding-bottom: 0.5em;
         }
       }
     }
