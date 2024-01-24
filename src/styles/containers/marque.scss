@@ -1,0 +1,31 @@
+.marque {
+  background: $black;
+  display: flex;
+  gap: 20px;
+  padding: 40px 0;
+
+  @media screen and (max-width: $tablet) {
+    padding: 15px 0;
+  }
+
+  &__card {
+    color: #fff;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    @media screen and (max-width: $tablet) {
+      font-size: 16px;
+    }
+  }
+
+  .rfm-initial-child-container {
+    display: flex;
+    gap: 50px;
+  }
+
+  .rfm-marquee {
+    display: flex;
+    gap: 50px;
+  }
+}

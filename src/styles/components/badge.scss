@@ -1,0 +1,30 @@
+.badge {
+  border-radius: 50px;
+  border: 3px solid #000;
+  display: flex;
+  width: 70px;
+  height: 70px;
+  padding: 17px 13.43px 16px 14px;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+
+  @media screen and (max-width: $tablet) {
+    width: 51.712px;
+    height: 51.712px;
+    padding: 5.91px 8.126px 5.337px 8.126px;
+  }
+
+  &.yellow {
+    background-color: $yellow;
+  }
+
+  &.blue {
+    background-color: $blue;
+  }
+
+  &.red {
+    background-color: $tomato;
+  }
+}

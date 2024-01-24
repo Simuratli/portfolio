@@ -8,8 +8,12 @@
 @import "./components/header";
 @import "./components/avatar";
 @import "./components/button";
+@import "./components/badge";
 
 @import "./containers/hero";
+@import "./containers/marque";
+@import "./containers/experience";
+@import "./containers/experienceTable";
 
 * {
   padding: 0;

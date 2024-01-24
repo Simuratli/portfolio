@@ -1,12 +1,7 @@
 import React from "react";
-
-const Header = () => {
-  return (
-    <div className="header">
-      I design ✍️ top <br />
-      notch <mark>websites</mark>
-    </div>
-  );
+import { HeaderPropTypes } from "./Header.types";
+const Header = ({ children, type }: HeaderPropTypes) => {
+  return <div className={`header ${type}`}>{children}</div>;
 };
 
 export default Header;

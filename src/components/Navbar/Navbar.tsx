@@ -6,10 +6,7 @@ import Logo from "../Logo";
 const Navbar = () => {
   const { openNavbar, setOpenNavbar } = useNavbar();
   return (
-    <nav
-      style={{ position: openNavbar ? "fixed" : "relative" }}
-      className="navbar"
-    >
+    <nav className="navbar">
       <Star top={-50} right={-50} />
       <div className="navbar__content">
         <span className="navbar__borderDot"></span>

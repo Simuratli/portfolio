@@ -13,4 +13,8 @@
     line-height: 0em;
     padding-bottom: 0.5em;
   }
+
+  &.MEDIUM {
+    font-size: clamp(24px, 3vw, 48px);
+  }
 }
