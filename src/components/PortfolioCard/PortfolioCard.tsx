@@ -9,7 +9,7 @@ const PortfolioCard = () => {
       <PortfolioCardBorder className="portfolioCard__border" />
       <div className="portfolioCard__image">
         <img
-          src="https://help.behance.net/hc/article_attachments/360099180953/Screen_Shot_2020-11-10_at_11.14.38_AM.png"
+          src="https://mir-s3-cdn-cf.behance.net/projects/404/2b6152154020263.Y3JvcCwzNDUxLDI3MDAsMTExOSww.png"
           alt=""
         />
       </div>
