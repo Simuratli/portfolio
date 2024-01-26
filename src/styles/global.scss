@@ -11,11 +11,13 @@
 @import "./components/badge";
 @import "./components/experienceTableCard";
 @import "./components/experienceTableHeaderCard";
+@import "./components/porfolioCard";
 
 @import "./containers/hero";
 @import "./containers/marque";
 @import "./containers/experience";
 @import "./containers/experienceTable";
+@import "./containers/portfolioSection";
 
 * {
   padding: 0;

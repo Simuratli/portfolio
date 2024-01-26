@@ -1,12 +1,12 @@
 import React from "react";
 import { Header, Avatar, Button } from "../../components";
-import Sun from "../../assets/images/sun.svg";
+import SunIcon from "../../assets/sun";
 import { HeaderType } from "../../types/global.types";
 const Hero = () => {
   return (
     <div className="hero">
       <div className="hero__content">
-        <img className="hero__sun" src={Sun} alt="Simuratli Sun" />
+        <SunIcon className="hero__sun" />
         <Header type={HeaderType.BIG}>
           I design ✍️ top <br />
           notch <mark>websites</mark>

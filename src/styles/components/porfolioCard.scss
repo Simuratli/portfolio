@@ -1,0 +1,58 @@
+.portfolioCard {
+  width: clamp(19.75rem, 16vw + 14.125rem, 33.5rem);
+  height: clamp(19.75rem, 16vw + 14.125rem, 33.5rem);
+  background-color: $white;
+  position: relative;
+  padding: clamp(1.25rem, 1.136vw + 0.994rem, 1.875rem);
+
+  &__border {
+    width: 108%;
+    height: 108%;
+    position: absolute;
+    left: -14px;
+    top: -14px;
+  }
+
+  &__image {
+    border: 4.416px solid #000;
+    width: clamp(17.125rem, 12.591vw + 12.267rem, 29rem);
+    height: clamp(10.813rem, 4.75vw + 7.719rem, 18.375rem);
+    margin: 0 auto;
+    position: relative;
+    top: 20px;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      width: 100%;
+      object-position: center;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 100;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.438rem, 0.568vw + 0.31rem, 0.75rem);
+    color: #000;
+
+    h1 {
+      font-size: clamp(1.25rem, 1.818vw + 0.841rem, 2.25rem);
+    }
+
+    p {
+      font-size: clamp(0.938rem, 1.023vw + 0.707rem, 1.5rem);
+    }
+  }
+
+  &__img {
+    width: clamp(1.5rem, 1.591vw + 1.142rem, 2.375rem);
+  }
+}

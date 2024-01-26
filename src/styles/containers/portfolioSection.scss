@@ -1,0 +1,64 @@
+.portfolioSection {
+  padding: 30px 80px;
+
+  @media screen and (max-width: $tablet) {
+    padding: 10px 10px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 100px;
+      margin-bottom: 40px;
+
+      @media screen and (max-width: $tablet) {
+        gap: 20px;
+        height: 130px;
+        margin-bottom: 0;
+      }
+    }
+
+    &__text {
+      display: block;
+      position: relative;
+    }
+
+    &__line {
+      position: absolute;
+      bottom: -20px;
+      right: 0;
+      width: 70%;
+    }
+
+    &__sun {
+      width: 112px;
+      rect {
+        fill: $blue;
+      }
+      @media screen and (max-width: $tablet) {
+        width: 55px;
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-row-gap: 55px;
+    grid-column-gap: 55px;
+
+    @media screen and (max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+      gap: 55px;
+      align-items: center;
+    }
+  }
+}
