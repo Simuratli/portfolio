@@ -5,8 +5,9 @@ export interface StarIconPropTypes {
   left?: number;
   top?: number;
   bottom?: number;
+  className?: string;
 }
-const Start = ({ right, left, top, bottom }: StarIconPropTypes) => {
+const Start = ({ right, left, top, bottom, className }: StarIconPropTypes) => {
   return (
     <svg
       style={{
@@ -16,6 +17,7 @@ const Start = ({ right, left, top, bottom }: StarIconPropTypes) => {
         left: sizeHandlerForStarIcon(left),
         right: sizeHandlerForStarIcon(right),
       }}
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       width="151"
       height="136"
