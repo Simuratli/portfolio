@@ -1,7 +1,9 @@
 import React from "react";
-
-const Portfolio = () => {
-  return <section>Portfolio</section>;
+import {Portfolio} from '../../containers'
+const PortfolioPage = () => {
+  return <section>
+    <Portfolio/>
+  </section>;
 };
 
-export default Portfolio;
+export default PortfolioPage;
