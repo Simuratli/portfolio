@@ -1,0 +1,38 @@
+.actionButton {
+  display: flex;
+  gap: 2px;
+  padding: 0 15px;
+  outline: none;
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+  color: #000;
+  font-size: clamp(0.75rem, 0.682vw + 0.597rem, 1.125rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  align-items: center;
+  justify-content: space-between;
+
+  span {
+    display: block;
+    flex: 1;
+    padding: 10px;
+    border-right: 1px solid $black;
+  }
+
+  svg {
+    stroke: $tomato;
+    width: 20px;
+    margin-left: 10px;
+    height: 20px;
+  }
+
+  &.download {
+    background-color: $yellow;
+  }
+
+  &.copy {
+    background-color: $lightBlue;
+  }
+}

@@ -11,3 +11,8 @@ export enum BadgeEnumType {
   PURPLE = "purple",
   YELLOW = "yellow",
 }
+
+export enum ActionButtonEnumType {
+  DOWNLOAD = "download",
+  COPY = "copy",
+}

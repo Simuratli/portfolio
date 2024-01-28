@@ -1,0 +1,105 @@
+.aboutPage {
+  padding: 80px;
+
+  @media screen and (max-width: $tablet) {
+    padding: 80px 20px;
+  }
+
+  &__cardHeader {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: clamp(1.875rem, 4.545vw + 0.852rem, 4.375rem);
+    @media screen and (max-width: $mobile) {
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @media screen and (max-width: $mobile) {
+      flex-direction: column-reverse;
+      gap: 30px;
+    }
+  }
+
+  &__image {
+    width: clamp(4.375rem, 9.886vw + 2.151rem, 9.813rem);
+    height: auto;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      min-width: 70px;
+    }
+  }
+
+  &__text {
+    h1 {
+      font-size: clamp(1.5rem, 1.364vw + 1.193rem, 2.25rem);
+    }
+
+    p {
+      font-size: clamp(1rem, 0.455vw + 0.898rem, 1.25rem);
+      width: 70%;
+      margin-top: 10px;
+    }
+  }
+
+  &__actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+
+    @media screen and (max-width: $smallScreen) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__social {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+
+    @media screen and (max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+    }
+    &__card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+.avaiblity {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  &__icon {
+    display: block;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: $blue;
+  }
+
+  color: $orange;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

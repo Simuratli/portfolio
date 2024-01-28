@@ -12,6 +12,8 @@
 @import "./components/experienceTableCard";
 @import "./components/experienceTableHeaderCard";
 @import "./components/porfolioCard";
+@import "./components/card";
+@import "./components/actionButton";
 
 @import "./containers/hero";
 @import "./containers/marque";
@@ -20,6 +22,8 @@
 @import "./containers/portfolioSection";
 @import "./containers/blog";
 @import "./containers/contact";
+
+@import "./page/about";
 
 * {
   padding: 0;
