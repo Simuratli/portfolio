@@ -42,7 +42,7 @@ const About = () => {
           </div>
           <div className="aboutPage__image">
             <img
-              src="https://s3-alpha-sig.figma.com/img/f8a6/9d59/bf63c3bada14a5430e8685d9999e7be6?Expires=1707091200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=gYe-lcsYv-z~qY07vVmNVmw2zqwLhIXfzZOoLRqod6O32pWG4BCDHYOfGVKUGECpRgR7BXM~QxyHQIV4PuL1g0TsWoMQfEvWBHYqTSNHId723Honidc1x6VwXZx6kxcwDnPSVxSaYZcE-2vrvL6sz50pjUdMHT20-XRkECsWv1lyfPTsTt39lwRachqBuN9MRe28kiym75Mi1ofhQzkKAkKh8BCQpsuwM5qRlLDewr8nEzefeziMvpE0gW~iHKU8gSH4H7LOx35hUR5UuGpPcpu8y-NE072mUcteZCL3Zx~7rMTFE0k63c0kk-Qm076xjivybS6jZHqTEZQ1Uvd0SA__"
+              src="https://blog.prototion.com/content/images/2021/09/peep-1.png"
               alt=""
             />
           </div>

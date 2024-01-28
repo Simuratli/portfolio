@@ -32,7 +32,8 @@
   &__image {
     width: clamp(4.375rem, 9.886vw + 2.151rem, 9.813rem);
     height: auto;
-
+    background-color: $white;
+    border-radius: 50%;
     img {
       width: 100%;
       height: 100%;
