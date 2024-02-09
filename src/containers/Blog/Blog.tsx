@@ -2,14 +2,12 @@ import React from "react";
 import { Header } from "../../components";
 import { HeaderType } from "../../types/global.types";
 import NewImage from "../../assets/images/newIcon.svg";
-const Blog = () => {
+import { BlogPropTypes } from "./Blog.types";
+const Blog = ({ title }: BlogPropTypes) => {
   return (
     <div className="blog">
       <div className="blog__header">
-        <Header type={HeaderType.MEDIUM}>
-          Here’s what my clients <br />
-          are saying about my work
-        </Header>
+        <Header type={HeaderType.MEDIUM}>{title}</Header>
 
         <img src={NewImage} alt="Newicon" />
       </div>

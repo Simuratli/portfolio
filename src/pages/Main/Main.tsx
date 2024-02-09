@@ -14,7 +14,7 @@ const Main = () => {
       <Marque />
       <Experience />
       <Portfolio />
-      <Blog />
+      <Blog title={"Here’s what my clients are saying about my work"} />
       <Contact />
     </div>
   );

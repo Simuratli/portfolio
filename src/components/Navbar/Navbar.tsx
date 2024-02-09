@@ -39,8 +39,8 @@ const Navbar = () => {
             </NavLink>
           </div>
           <div className="navbar__element">
-            <NavLink to="/hire">
-              <mark>Hire Me</mark>
+            <NavLink to="/blog">
+              <mark>Blog</mark>
             </NavLink>
           </div>
         </div>

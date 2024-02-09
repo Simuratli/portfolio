@@ -8,7 +8,12 @@
   &__header {
     display: flex;
     gap: 40px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
+    width: 50%;
+
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+    }
 
     img {
       @media screen and (max-width: $tablet) {
@@ -23,6 +28,7 @@
     grid-template-rows: 1fr;
     grid-column-gap: -5px;
     grid-row-gap: 20px;
+    place-items: center;
 
     @media screen and (max-width: $mobile) {
       display: flex;

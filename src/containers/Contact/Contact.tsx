@@ -14,7 +14,16 @@ const Contact = () => {
           Want to see how to transform your brand into a unique style. sent us a
           message
         </p>
-        <Button />
+        <Button
+          onClick={() => {
+            window.open(
+              "https://telegram.me/simuratli",
+              "_blank",
+              "noopener,noreferrer",
+            );
+          }}
+          text="Send us message"
+        />
       </div>
     </div>
   );
