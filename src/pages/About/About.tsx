@@ -6,7 +6,7 @@ import DownloadIcon from "../../assets/downloadIcon";
 import URLIcon from "../../assets/images/url.svg";
 import { Link } from "react-router-dom";
 import { useStore } from "../../store";
-import Transition from "animation/Transition";
+import Transition from "../../animations/Transition";
 
 const About = () => {
   const { setAlert } = useStore();

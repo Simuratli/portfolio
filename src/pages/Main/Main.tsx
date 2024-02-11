@@ -7,13 +7,12 @@ import {
   Blog,
   Contact,
 } from "../../containers";
-// import Transition from "../../animation/Transition";
-
+import Transition from "../../animations/Transition";
 
 
 const Main = () => {
   return (
-    // <Transition>
+    <Transition>
       <div>
         <Hero />
         <Marque />
@@ -22,7 +21,7 @@ const Main = () => {
         <Blog title={"Explore my blog for front-end insights and updates."} />
         <Contact />
       </div>
-    // </Transition>
+    </Transition>
   );
 };
 

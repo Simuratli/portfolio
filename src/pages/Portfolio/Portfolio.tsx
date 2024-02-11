@@ -1,6 +1,6 @@
 import React from "react";
 import { Portfolio } from "../../containers";
-import Transition from "../../animation/Transition";
+import Transition from "../../animations/Transition";
 
 const PortfolioPage = () => {
   return (

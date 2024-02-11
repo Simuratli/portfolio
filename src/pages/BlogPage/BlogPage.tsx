@@ -1,6 +1,6 @@
 import React from "react";
 import { Blog } from "../../containers";
-import Transition from "../../animation/Transition";
+import Transition from "../../animations/Transition";
 
 const BlogPage = () => {
   return (
