@@ -5,7 +5,42 @@ import CopyIcon from "../../assets/copy";
 import DownloadIcon from "../../assets/downloadIcon";
 import URLIcon from "../../assets/images/url.svg";
 import { Link } from "react-router-dom";
+import {useStore} from '../../store'
+
+
+
 const About = () => {
+
+  const { setAlert } = useStore()
+
+
+  const downloadPdf = () => {
+    const pdf = "/Simuratli_Eljan_Resume_2024.pdf";
+    const link = document.createElement("a");
+    link.href = pdf;
+    link.download = "Simuratli Eljan Resume.pdf"; // Name of the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const copyEmailToClipboard = () => {
+
+    const input = document.createElement("input");
+    const email = "simuratli@gmail.com"; // Replace with your email address
+    input.value = email;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    document.body.removeChild(input);
+    setAlert(true,"Email copied");
+    setTimeout(()=>{
+      setAlert(false,"");
+    },1000)
+
+  };
+
+
   return (
     <section className="aboutPage">
       <Card>
@@ -24,17 +59,13 @@ const About = () => {
             <div className="aboutPage__actions">
               <ActionButton
                 text="Download CV"
-                onClick={() => {
-                  console.log("download");
-                }}
+                onClick={downloadPdf}
                 type={ActionButtonEnumType.DOWNLOAD}
                 icon={<DownloadIcon />}
               />
               <ActionButton
                 text="Copy email"
-                onClick={() => {
-                  console.log("copy");
-                }}
+                onClick={copyEmailToClipboard}
                 type={ActionButtonEnumType.COPY}
                 icon={<CopyIcon />}
               />

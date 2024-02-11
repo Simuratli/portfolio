@@ -3,7 +3,10 @@ import { NavLink } from "react-router-dom";
 import Star from "../../assets/star";
 import { useNavbar } from "../../hooks/useNavbar";
 import Logo from "../Logo";
+import {Alert} from "../";
+import {useStore} from '../../store'
 const Navbar = () => {
+  const {alertText,showAlert} = useStore()
   const { openNavbar, setOpenNavbar } = useNavbar();
   return (
     <nav className="navbar">
@@ -15,7 +18,9 @@ const Navbar = () => {
         <span className="navbar__borderDot"></span>
         <div className="navbar__logo">
           <Logo />
-
+          {
+              showAlert && <Alert text={alertText}  />
+          }
           <div
             onClick={() => {
               setOpenNavbar((prev) => !prev);
