@@ -1,3 +1,3 @@
-export interface AlertPropTypes{
-    text:string;
+export interface AlertPropTypes {
+  text: string;
 }

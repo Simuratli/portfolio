@@ -1,10 +1,14 @@
 import React from "react";
 import { Blog } from "../../containers";
+import Transition from "../../animation/Transition";
+
 const BlogPage = () => {
   return (
-    <section className="hire">
-      <Blog title="Posts" />
-    </section>
+    <Transition>
+      <section className="hire">
+        <Blog title="Posts" />
+      </section>
+    </Transition>
   );
 };
 

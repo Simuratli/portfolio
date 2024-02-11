@@ -11,8 +11,8 @@ const Hero = () => {
       <div className="hero__content">
         <SunIcon className="hero__sun" />
         <Header type={HeaderType.BIG}>
-          I design ✍️ top <br />
-          notch <mark>websites</mark>
+          I create ✍️ top <br />
+          notch <mark>solutions</mark>
         </Header>
         <Button
           text="See Portfolio"
