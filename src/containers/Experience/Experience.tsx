@@ -8,8 +8,8 @@ const Experience = () => {
     <section className="experience">
       <div className="experience__header">
         <Header type={HeaderType.MEDIUM}>
-          Services we’re providing <br />
-          that derive 99% result
+          Lets talk about <br />
+          my experience and projects
         </Header>
         <img src={Smile} alt="smile" />
       </div>

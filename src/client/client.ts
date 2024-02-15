@@ -17,7 +17,7 @@ export async function getPosts() {
 }
 
 export async function getUser() {
-    const posts = await client.fetch('*[_type == "user"]')
+    const posts = await client.fetch('*[_type == "user"][0]{...,"social": social[]->{title,url,_id}}')
     return posts
   }
 

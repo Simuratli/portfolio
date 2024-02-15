@@ -7,16 +7,21 @@ import {
   Blog,
   Contact,
 } from "../../containers";
+import Transition from "../../animations/Transition";
+
+
 const Main = () => {
   return (
-    <div>
-      <Hero />
-      <Marque />
-      <Experience />
-      <Portfolio />
-      <Blog />
-      <Contact />
-    </div>
+    <Transition>
+      <div>
+        <Hero />
+        <Marque />
+        <Experience />
+        <Portfolio />
+        <Blog title={"Explore my blog for front-end insights and updates."} />
+        <Contact />
+      </div>
+    </Transition>
   );
 };
 

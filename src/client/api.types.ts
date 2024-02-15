@@ -1,3 +1,9 @@
+export interface SocialNetworksPropTypes {
+    title:string;
+    url:string;
+    _id:string;
+}
+
 export interface UserPropTypes {
     bio:[],
     cv:[],
@@ -6,7 +12,7 @@ export interface UserPropTypes {
     jobTitle:string;
     name:string;
     quote:string;
-    social:[];
+    social:SocialNetworksPropTypes[];
     _createdAt:string;
     _id:string;
     _rev:string;
