@@ -1,11 +1,25 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import { Card, ActionButton } from "../../components";
 import { ActionButtonEnumType } from "../../types/global.types";
 import CopyIcon from "../../assets/copy";
 import DownloadIcon from "../../assets/downloadIcon";
 import URLIcon from "../../assets/images/url.svg";
 import { Link } from "react-router-dom";
+import  {getUser} from "../../client/client";
+
+
+
 const About = () => {
+
+  const [user, setUser] = useState({})
+
+  useEffect(() => {
+    getUser()
+			.then((data) => setUser(data[0]))
+			.catch(console.error);
+  }, [])
+
+  console.log(user,'user data')
   return (
     <section className="aboutPage">
       <Card>
