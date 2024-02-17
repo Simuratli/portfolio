@@ -13,6 +13,7 @@
     transition: 0.1s ease;
     background: $paper;
     left: -100%;
+    z-index: 998;
 
     &.open {
       left: 0;

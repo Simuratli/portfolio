@@ -2,24 +2,27 @@ import React from "react";
 import PortfolioCardBorder from "../../assets/portfolioCardBorder";
 import { Link } from "react-router-dom";
 import URLIcon from "../../assets/images/url.svg";
+import { PortfolioCardPropTypes } from "./PortfolioCard.types";
 
-const PortfolioCard = () => {
+const PortfolioCard = ({
+  title,
+  image,
+  url,
+  description,
+}: PortfolioCardPropTypes) => {
   return (
     <div className="portfolioCard">
       <PortfolioCardBorder className="portfolioCard__border" />
       <div className="portfolioCard__image">
-        <img
-          src="https://mir-s3-cdn-cf.behance.net/projects/404/2b6152154020263.Y3JvcCwzNDUxLDI3MDAsMTExOSww.png"
-          alt=""
-        />
+        <img src={image} alt={title} />
       </div>
 
       <div className="portfolioCard__content">
         <div className="portfolioCard__text">
-          <h1>Portfolio design</h1>
-          <p>UI design - User research - webflow develop</p>
+          <h1>{title}</h1>
+          <p>{description}</p>
         </div>
-        <Link className="portfolioCard__url" to="/">
+        <Link className="portfolioCard__url" target="__blank" to={url}>
           <img src={URLIcon} alt="" />
         </Link>
       </div>

@@ -62,4 +62,20 @@
       align-items: center;
     }
   }
+
+  &__viewMore {
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      padding: 10px 20px;
+      border: 3px solid black;
+      border-radius: 30px;
+      font-size: 18px;
+      background-color: $tomato;
+      cursor: pointer;
+      color: white;
+    }
+  }
 }

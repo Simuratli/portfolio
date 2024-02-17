@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Card, ActionButton } from "../../components";
 import { ActionButtonEnumType } from "../../types/global.types";
 import CopyIcon from "../../assets/copy";
@@ -7,18 +7,15 @@ import URLIcon from "../../assets/images/url.svg";
 import { Link } from "react-router-dom";
 import { useStore } from "../../store";
 import Transition from "../../animations/Transition";
-import {getUser} from '../../client/client'
-import {UserPropTypes} from '../../client/api.types'
+import { getUser } from "../../client/client";
+import { UserPropTypes } from "../../client/api.types";
 const About = () => {
-
   const { setAlert } = useStore();
-  const [user, setUser] = useState<UserPropTypes | null>(null)
+  const [user, setUser] = useState<UserPropTypes | null>(null);
   useEffect(() => {
-    getUser().then(response => setUser(response))
-  }, [])
-  console.log(user)
-
-
+    getUser().then((response) => setUser(response));
+  }, []);
+  console.log(user);
 
   const downloadPdf = () => {
     const pdf = "/Simuratli_Eljan_Resume_2024.pdf";
@@ -85,18 +82,19 @@ const About = () => {
         </Card>
 
         <div className="aboutPage__social">
-          {
-            user && user.social.map((soc)=>{
-              return <Card key={soc._id}>
-              <div className="aboutPage__social__card">
-                <h1>{soc.title}</h1>
-                <Link to={soc.url}>
-                  <img src={URLIcon} alt="URL ICON" />
-                </Link>
-              </div>
-            </Card>
-            })
-          }
+          {user &&
+            user.social.map((soc) => {
+              return (
+                <Card key={soc._id}>
+                  <div className="aboutPage__social__card">
+                    <h1>{soc.title}</h1>
+                    <Link to={soc.url}>
+                      <img src={URLIcon} alt="URL ICON" />
+                    </Link>
+                  </div>
+                </Card>
+              );
+            })}
         </div>
       </section>
     </Transition>

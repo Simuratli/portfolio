@@ -9,7 +9,6 @@ import {
 } from "../../containers";
 import Transition from "../../animations/Transition";
 
-
 const Main = () => {
   return (
     <Transition>
@@ -17,7 +16,7 @@ const Main = () => {
         <Hero />
         <Marque />
         <Experience />
-        <Portfolio />
+        <Portfolio small />
         <Blog title={"Explore my blog for front-end insights and updates."} />
         <Contact />
       </div>
