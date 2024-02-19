@@ -1,13 +1,18 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Star from "../../assets/star";
 import { useNavbar } from "../../hooks/useNavbar";
 import Logo from "../Logo";
 import { Alert } from "../";
 import { useStore } from "../../store";
+import { motion, useMotionValue, AnimatePresence } from "framer-motion";
+
 const Navbar = () => {
   const { alertText, showAlert } = useStore();
-  const { openNavbar, setOpenNavbar } = useNavbar();
+  const { openNavbar, setOpenNavbar, NavURLs, setTransform } = useNavbar();
+  const { pathname } = useLocation();
+  const MotionLink = motion(Link);
+
   return (
     <nav className="navbar">
       <Star top={-50} right={-50} />
@@ -30,50 +35,67 @@ const Navbar = () => {
             <span></span>
           </div>
         </div>
-        <div className="navbar__element__container">
-          <div className="navbar__element">
-            <NavLink to="/about">
-              <mark>About</mark>
-            </NavLink>
+        <AnimatePresence>
+          <div className="navbar__element__container">
+            {NavURLs.map((link, index) => {
+              const x = useMotionValue(0);
+              const y = useMotionValue(0);
+              return (
+                <motion.div
+                  key={index}
+                  onPointerMove={(event) => {
+                    const item = event.currentTarget;
+                    setTransform(item, event, x, y);
+                  }}
+                  onPointerLeave={() => {
+                    x.set(0);
+                    y.set(0);
+                  }}
+                  style={{ x, y }}
+                  className="navbar__element"
+                >
+                  <MotionLink to={link.link}>
+                    <mark>{link.text}</mark>
+                    {pathname === link.link ? (
+                      <motion.div
+                        transition={{ type: "spring" }}
+                        layoutId="underline"
+                        className="navbar__element__active"
+                      ></motion.div>
+                    ) : null}
+                  </MotionLink>
+                </motion.div>
+              );
+            })}
           </div>
-          <div className="navbar__element">
-            <NavLink to="/portfolio">
-              <mark>Portfolio</mark>
-            </NavLink>
-          </div>
-          <div className="navbar__element">
-            <NavLink to="/blog">
-              <mark>Blog</mark>
-            </NavLink>
-          </div>
-        </div>
+        </AnimatePresence>
       </div>
       <div className={`navbar__mobile ${openNavbar && "open"}`}>
         <div className="navbar__mobile__content">
-          <NavLink
+          <Link
             onClick={() => {
               setOpenNavbar(false);
             }}
             to="/about"
           >
             About
-          </NavLink>
-          <NavLink
+          </Link>
+          <Link
             onClick={() => {
               setOpenNavbar(false);
             }}
             to="/portfolio"
           >
             Portfolio
-          </NavLink>
-          <NavLink
+          </Link>
+          <Link
             onClick={() => {
               setOpenNavbar(false);
             }}
             to="/hire"
           >
             Hire me
-          </NavLink>
+          </Link>
         </div>
       </div>
       <Star left={-70} />

@@ -3,6 +3,8 @@ import { Header } from "../../components";
 import { HeaderType } from "../../types/global.types";
 import NewImage from "../../assets/images/newIcon.svg";
 import { BlogPropTypes } from "./Blog.types";
+// import { getPosts } from "../../client/client";
+
 const Blog = ({ title }: BlogPropTypes) => {
   return (
     <div className="blog">
