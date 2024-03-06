@@ -11,3 +11,4 @@ export { default as PortfolioCard } from "./PortfolioCard";
 export { default as Card } from "./Card";
 export { default as ActionButton } from "./ActionButton";
 export { default as Alert } from "./Alert";
+export { default as BlogCard } from "./BlogCard";

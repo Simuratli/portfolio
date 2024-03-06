@@ -1,11 +1,21 @@
-import React from "react";
-import { Header } from "../../components";
+import React, { useEffect, useState } from "react";
+import { Header, BlogCard } from "../../components";
 import { HeaderType } from "../../types/global.types";
 import NewImage from "../../assets/images/newIcon.svg";
 import { BlogPropTypes } from "./Blog.types";
-// import { getPosts } from "../../client/client";
+import { getPosts } from "../../client/client";
+import { urlFor } from "../../client/client";
+import { useNavigate } from "react-router-dom";
+import { PostType } from "client/api.types";
+const Blog = ({ title, small }: BlogPropTypes) => {
+  const navigate = useNavigate();
+  const [posts, setPosts] = useState<PostType[]>([]);
+  useEffect(() => {
+    getPosts().then((response: PostType[]) => {
+      setPosts(response);
+    });
+  }, []);
 
-const Blog = ({ title }: BlogPropTypes) => {
   return (
     <div className="blog">
       <div className="blog__header">
@@ -15,70 +25,31 @@ const Blog = ({ title }: BlogPropTypes) => {
       </div>
 
       <div className="blog__content">
-        <div className="blogCard rl">
-          <div className="blogCard__image">
-            <img
-              src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*l-RoG5PeMSqshdksCqUUaA.png"
-              alt="Medium blog Simuratli eljan"
-            />
-          </div>
-          <div className="blogCard__title">
-            Unlocking the Power of TypeScript: A Guide to Essential Utility
-            Types
-          </div>
-        </div>
-
-        <div className="blogCard rr">
-          <div className="blogCard__image">
-            <img
-              src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*l-RoG5PeMSqshdksCqUUaA.png"
-              alt="Medium blog Simuratli eljan"
-            />
-          </div>
-          <div className="blogCard__title">
-            Unlocking the Power of TypeScript: A Guide to Essential Utility
-            Types
-          </div>
-        </div>
-        <div className="blogCard rl">
-          <div className="blogCard__image">
-            <img
-              src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*l-RoG5PeMSqshdksCqUUaA.png"
-              alt="Medium blog Simuratli eljan"
-            />
-          </div>
-          <div className="blogCard__title">
-            Unlocking the Power of TypeScript: A Guide to Essential Utility
-            Types
-          </div>
-        </div>
-
-        <div className="blogCard rr">
-          <div className="blogCard__image">
-            <img
-              src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*l-RoG5PeMSqshdksCqUUaA.png"
-              alt="Medium blog Simuratli eljan"
-            />
-          </div>
-          <div className="blogCard__title">
-            Unlocking the Power of TypeScript: A Guide to Essential Utility
-            Types
-          </div>
-        </div>
-
-        <div className="blogCard rl">
-          <div className="blogCard__image">
-            <img
-              src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*l-RoG5PeMSqshdksCqUUaA.png"
-              alt="Medium blog Simuratli eljan"
-            />
-          </div>
-          <div className="blogCard__title">
-            Unlocking the Power of TypeScript: A Guide to Essential Utility
-            Types
-          </div>
-        </div>
+        {posts.map((post, index) => {
+          return (
+            index < (small ? 4 : posts.length) && (
+              <BlogCard
+                key={post._id}
+                img={urlFor(post.mainImage).url()}
+                title={post.title}
+                url={post.url}
+              />
+            )
+          );
+        })}
       </div>
+
+      {small && (
+        <div className="portfolioSection__viewMore">
+          <button
+            onClick={() => {
+              navigate("/blog");
+            }}
+          >
+            View more
+          </button>
+        </div>
+      )}
     </div>
   );
 };

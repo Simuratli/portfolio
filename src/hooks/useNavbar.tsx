@@ -22,7 +22,6 @@ export const useNavbar = () => {
     x: MotionValue,
     y: MotionValue,
   ) => {
-    console.log(item, event, x, y);
     const bounds = item.getBoundingClientRect();
     const relativeX = event.clientX - bounds.left;
     const relativeY = event.clientY - bounds.top;

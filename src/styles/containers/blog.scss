@@ -48,6 +48,7 @@
   background: var(--White, #fff);
   box-shadow: 11.465px 11.465px 0px 0px #bfbfb4;
   padding: clamp(1.25rem, 2.273vw + 0.739rem, 2.5rem);
+  color: $black;
 
   @media screen and (max-width: $mobile) {
     width: 100%;

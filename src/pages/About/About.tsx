@@ -15,7 +15,6 @@ const About = () => {
   useEffect(() => {
     getUser().then((response) => setUser(response));
   }, []);
-  console.log(user);
 
   const downloadPdf = () => {
     const pdf = "/Simuratli_Eljan_Resume_2024.pdf";

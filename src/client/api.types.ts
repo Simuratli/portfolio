@@ -39,3 +39,20 @@ export interface ProjectPropType {
   _updatedAt: string;
   description: string;
 }
+
+export interface PostType {
+  author: string;
+  mainImage: SanityImagePropType;
+  publishedAt: string;
+  slug: {
+    current: string;
+    _type: string;
+  };
+  title: string;
+  url: string;
+  _createdAt: string;
+  _id: string;
+  _rev: string;
+  _type: string;
+  _updatedAt: string;
+}

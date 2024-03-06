@@ -17,7 +17,10 @@ const Main = () => {
         <Marque />
         <Experience />
         <Portfolio small />
-        <Blog title={"Explore my blog for front-end insights and updates."} />
+        <Blog
+          small
+          title={"Explore my blog for front-end insights and updates."}
+        />
         <Contact />
       </div>
     </Transition>
