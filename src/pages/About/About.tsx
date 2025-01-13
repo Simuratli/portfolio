@@ -17,7 +17,7 @@ const About = () => {
   }, []);
 
   const downloadPdf = () => {
-    const pdf = "/Simuratli_Eljan_Resume_2024.pdf";
+    const pdf = "/cv2025.pdf";
     const link = document.createElement("a");
     link.href = pdf;
     link.download = "Simuratli Eljan Resume.pdf"; // Name of the downloaded file
