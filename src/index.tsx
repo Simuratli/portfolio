@@ -4,6 +4,7 @@ import "./styles/global.scss";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { Main, About, Portfolio, BlogPage } from "./pages";
 import { Navbar, Footer, Seo } from "components";
+import { Analytics } from "@vercel/analytics/react"
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
 );
@@ -11,6 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <BrowserRouter>
     <Seo />
+    <Analytics />
     <Navbar />
     <Routes>
       <Route path="/" element={<Main />} />
