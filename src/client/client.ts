@@ -31,7 +31,7 @@ export async function getSocialNetworks() {
 }
 
 export async function getProjects() {
-  const posts = await client.fetch('*[_type == "project"]');
+  const posts = await client.fetch('*[_type == "project"] | order(_createdAt asc)');
   return posts;
 }
 
