@@ -5,7 +5,7 @@ import { useNavbar } from "../../hooks/useNavbar";
 import Logo from "../Logo";
 import { Alert } from "../";
 import { useStore } from "../../store";
-import { motion, useMotionValue, AnimatePresence } from "framer-motion";
+import { motion,  AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const { alertText, showAlert } = useStore();
@@ -38,19 +38,13 @@ const Navbar = () => {
         <AnimatePresence>
           <div className="navbar__element__container">
             {NavURLs.map((link, index) => {
-              const x = useMotionValue(0);
-              const y = useMotionValue(0);
               return (
                 <motion.div
                   key={index}
                   onPointerMove={(event) => {
                     const item = event.currentTarget;
-                    setTransform(item, event, x, y);
                   }}
-                  onPointerLeave={() => {
-                    x.set(0);
-                    y.set(0);
-                  }}
+                  
                   // style={{ x, y }}
                   className="navbar__element"
                 >
