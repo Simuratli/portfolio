@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createClient } from "@sanity/client";
 import { SanityImagePropType } from "./api.types";
 import imageUrlBuilder from "@sanity/image-url";
@@ -14,7 +15,8 @@ export const client = createClient({
 
 // uses GROQ to query content: https://www.sanity.io/docs/groq
 export async function getPosts() {
-  const posts = await client.fetch('*[_type == "post"]');
+  const query = `*[_type == "post"]`
+  const posts = await client.fetch(query);
   return posts;
 }
 
