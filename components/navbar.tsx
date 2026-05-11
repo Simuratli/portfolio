@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { IconChevronDown } from "@/assets/icons";
 
 const links = [
   { label: "About", href: "#about" },
@@ -47,18 +48,9 @@ const Navbar = () => {
           className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-gray-200 text-sm text-gray-600 hover:border-gray-400 hover:text-gray-900 transition-colors bg-white"
         >
           Menu
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
+          <IconChevronDown
             className={`w-3.5 h-3.5 transition-transform ${open ? "rotate-180" : ""}`}
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline points="6 9 12 15 18 9" />
-          </svg>
+          />
         </button>
 
         {open && (

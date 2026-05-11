@@ -1,5 +1,6 @@
 import Navbar from "@/components/navbar";
 import FloatingOrb from "@/components/floating-orb";
+import FloatingChat from "@/components/floating-chat";
 import {
   HeroSection,
   AboutSection,
@@ -25,7 +26,10 @@ export default function Home() {
       <SkillsSection />
       <WritingSection />
       <ContactSection />
-      <FloatingOrb />
+      <div className="fixed bottom-6 right-6 z-100 flex flex-col items-center gap-3">
+        <FloatingChat />
+        <FloatingOrb />
+      </div>
     </main>
   );
 }

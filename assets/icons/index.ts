@@ -1,0 +1,12 @@
+export { default as IconX } from "./icon-x";
+export { default as IconSend } from "./icon-send";
+export { default as IconChatBubble } from "./icon-chat-bubble";
+export { default as IconCheck } from "./icon-check";
+export { default as IconCopy } from "./icon-copy";
+export { default as IconLinkedIn } from "./icon-linkedin";
+export { default as IconEmail } from "./icon-email";
+export { default as IconDownload } from "./icon-download";
+export { default as IconChevronDown } from "./icon-chevron-down";
+export { default as IconSparkles } from "./icon-sparkles";
+export { default as IconSwitchOn } from "./icon-switch-on";
+export { default as IconSwitchOff } from "./icon-switch-off";
