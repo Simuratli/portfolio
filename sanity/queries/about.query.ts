@@ -1,4 +1,4 @@
- import { groq } from "next-sanity";
+import { groq } from "next-sanity";
 import type { SanityAbout } from "../types";
 import { client } from "../client";
 

@@ -20,7 +20,7 @@ export function useAboutData() {
       setLoading: s.setLoading,
       setData: s.setData,
       setError: s.setError,
-    }))
+    })),
   );
 
   useEffect(() => {
@@ -46,6 +46,6 @@ export function useAboutData() {
       data: s.userData,
       status: s.status,
       error: s.error,
-    }))
+    })),
   );
 }

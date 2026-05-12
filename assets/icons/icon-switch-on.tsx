@@ -1,6 +1,9 @@
 import type { SVGProps } from "react";
 
-export default function IconSwitchOn({ className, ...props }: SVGProps<SVGSVGElement>) {
+export default function IconSwitchOn({
+  className,
+  ...props
+}: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +33,12 @@ export default function IconSwitchOn({ className, ...props }: SVGProps<SVGSVGEle
       {/* Paddle front face */}
       <polygon points="4,42 66,42 72,60 10,60" fill="white" />
       {/* Pivot cylinder top arc */}
-      <path d="M 22,60 C 22,52 78,52 78,60" fill="white" stroke="#111827" strokeWidth="4.5" />
+      <path
+        d="M 22,60 C 22,52 78,52 78,60"
+        fill="white"
+        stroke="#111827"
+        strokeWidth="4.5"
+      />
       {/* Pivot body */}
       <rect x="22" y="60" width="56" height="22" rx="8" fill="white" />
       {/* Bottom bar */}

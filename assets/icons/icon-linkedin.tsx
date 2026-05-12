@@ -1,6 +1,9 @@
 import type { SVGProps } from "react";
 
-export default function IconLinkedIn({ className, ...props }: SVGProps<SVGSVGElement>) {
+export default function IconLinkedIn({
+  className,
+  ...props
+}: SVGProps<SVGSVGElement>) {
   return (
     <svg
       className={className}

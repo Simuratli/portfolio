@@ -11,14 +11,13 @@ import {
 import { useStore } from "@/store";
 import { useShallow } from "zustand/react/shallow";
 
-
 export default function ContactSection() {
   const [copied, setCopied] = useState(false);
   const { userData } = useStore(
-     useShallow((s) => ({
-       userData: s.userData,
-     }))
-   );
+    useShallow((s) => ({
+      userData: s.userData,
+    })),
+  );
 
   const copyPhone = () => {
     navigator.clipboard.writeText("+994508269067");

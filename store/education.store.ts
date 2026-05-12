@@ -2,7 +2,6 @@ import { StateCreator } from "zustand";
 import type { SanityEducation, Status } from "@/sanity/types";
 import { StoreState } from ".";
 
-
 export interface EducationState {
   educationData: SanityEducation[] | null;
   educationStatus: Status;
@@ -13,14 +12,31 @@ export interface EducationState {
   setEducationError: (message: string) => void;
 }
 
-
-export const useEducationStore: StateCreator<StoreState, [], [], EducationState> = (
-  set,
-) => ({
+export const useEducationStore: StateCreator<
+  StoreState,
+  [],
+  [],
+  EducationState
+> = (set) => ({
   educationData: null,
   educationStatus: "idle",
   educationError: null,
-  setEducationLoading: () => set((state) => ({ ...state, educationStatus: "loading", educationError: null })),
-  setEducationData: (data: SanityEducation[]) => set((state) => ({ ...state, educationData: data, educationStatus: "success" })),
-  setEducationError: (message: string) => set((state) => ({ ...state, educationStatus: "error", educationError: message })),
+  setEducationLoading: () =>
+    set((state) => ({
+      ...state,
+      educationStatus: "loading",
+      educationError: null,
+    })),
+  setEducationData: (data: SanityEducation[]) =>
+    set((state) => ({
+      ...state,
+      educationData: data,
+      educationStatus: "success",
+    })),
+  setEducationError: (message: string) =>
+    set((state) => ({
+      ...state,
+      educationStatus: "error",
+      educationError: message,
+    })),
 });

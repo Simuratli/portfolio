@@ -19,6 +19,6 @@ export const useAboutStore: StateCreator<StoreState, [], [], AboutState> = (
   status: "idle",
   error: null,
   setLoading: () => set({ status: "loading", error: null }),
-  setData: (data) => set({ userData:data, status: "success" }),
+  setData: (data) => set({ userData: data, status: "success" }),
   setError: (message) => set({ status: "error", error: message }),
 });

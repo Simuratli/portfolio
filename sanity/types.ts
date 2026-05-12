@@ -32,7 +32,7 @@ export interface SanityEducation {
   degree: string;
   fieldOfStudy: string;
   gpa: number | null;
-  startDate: string;   // ISO date string "YYYY-MM-DD"
+  startDate: string; // ISO date string "YYYY-MM-DD"
   endDate: string | null;
   isPresent: boolean;
 }

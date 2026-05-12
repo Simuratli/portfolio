@@ -43,34 +43,35 @@ export default function AboutSection() {
                   {data.shortDescription}
                 </p>
 
-
-{/* Education */}
-                {educationStatus === "success" && educationData && educationData.length > 0 && (
-                  <div className="flex flex-col gap-5 pt-8 border-t border-gray-100">
-                    <h3 className="text-xs font-semibold tracking-widest text-gray-400 uppercase">
-                      Education
-                    </h3>
-                    <div className="flex flex-col gap-6">
-                      {educationData.map((item) => (
-                        <div key={item._id} className="flex flex-col gap-0.5">
-                          <span className="text-base font-semibold text-gray-900">
-                            {item.degree} — {item.fieldOfStudy}
-                          </span>
-                          <span className="text-sm text-gray-500">
-                            {item.school}
-                            {item.gpa ? ` — GPA: ${item.gpa}` : ""}
-                          </span>
-                          <span className="text-xs text-gray-400 mt-0.5">
-                            {item.startDate}
-                            {" – "}
-                            {item.isPresent ? "Present" : item.endDate}
-                          </span>
-                        </div>
-                      ))}
+                {/* Education */}
+                {educationStatus === "success" &&
+                  educationData &&
+                  educationData.length > 0 && (
+                    <div className="flex flex-col gap-5 pt-8 border-t border-gray-100">
+                      <h3 className="text-xs font-semibold tracking-widest text-gray-400 uppercase">
+                        Education
+                      </h3>
+                      <div className="flex flex-col gap-6">
+                        {educationData.map((item) => (
+                          <div key={item._id} className="flex flex-col gap-0.5">
+                            <span className="text-base font-semibold text-gray-900">
+                              {item.degree} — {item.fieldOfStudy}
+                            </span>
+                            <span className="text-sm text-gray-500">
+                              {item.school}
+                              {item.gpa ? ` — GPA: ${item.gpa}` : ""}
+                            </span>
+                            <span className="text-xs text-gray-400 mt-0.5">
+                              {item.startDate}
+                              {" – "}
+                              {item.isPresent ? "Present" : item.endDate}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                )}
-                
+                  )}
+
                 {/* Contact details */}
                 <div className="flex flex-col gap-3 pt-8 border-t border-gray-100">
                   <h3 className="text-xs font-semibold tracking-widest text-gray-400 uppercase">
@@ -91,8 +92,6 @@ export default function AboutSection() {
                     </div>
                   ))}
                 </div>
-
-                
 
                 {/* Links */}
                 <div className="flex flex-col gap-3 pt-8 border-t border-gray-100">
@@ -119,8 +118,6 @@ export default function AboutSection() {
                     </div>
                   ))}
                 </div>
-
-                
               </>
             )}
           </CardContent>

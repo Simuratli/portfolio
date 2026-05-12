@@ -114,7 +114,10 @@ export default function FloatingChat() {
                 setTimeout(() => {
                   setMessages((prev) => [
                     ...prev,
-                    { role: "assistant", text: "I'll get back to you on that shortly!" },
+                    {
+                      role: "assistant",
+                      text: "I'll get back to you on that shortly!",
+                    },
                   ]);
                 }, 600);
               }}

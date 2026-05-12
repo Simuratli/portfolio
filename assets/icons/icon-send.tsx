@@ -1,6 +1,9 @@
 import type { SVGProps } from "react";
 
-export default function IconSend({ className, ...props }: SVGProps<SVGSVGElement>) {
+export default function IconSend({
+  className,
+  ...props
+}: SVGProps<SVGSVGElement>) {
   return (
     <svg
       className={className}
@@ -11,7 +14,11 @@ export default function IconSend({ className, ...props }: SVGProps<SVGSVGElement
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M5 12h14M12 5l7 7-7 7"
+      />
     </svg>
   );
 }

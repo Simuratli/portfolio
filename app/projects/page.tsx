@@ -95,7 +95,11 @@ export default function ProjectsPage() {
             strokeWidth="2"
             viewBox="0 0 24 24"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15 19l-7-7 7-7"
+            />
           </svg>
           Back home
         </Link>
@@ -109,8 +113,8 @@ export default function ProjectsPage() {
             All projects
           </h1>
           <p className="mt-5 text-base md:text-lg text-gray-500 leading-relaxed max-w-xl">
-            A collection of work spanning AI-powered tools, enterprise platforms,
-            and open-source experiments.
+            A collection of work spanning AI-powered tools, enterprise
+            platforms, and open-source experiments.
           </p>
         </div>
 
