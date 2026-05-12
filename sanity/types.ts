@@ -24,3 +24,15 @@ export interface SanityAbout {
 
 // ─── Status union keeps loading states explicit and type-safe ────────────────
 export type Status = "idle" | "loading" | "success" | "error";
+
+// ─── Education ────────────────────────────────────────────────────────────────
+export interface SanityEducation {
+  _id: string;
+  school: string;
+  degree: string;
+  fieldOfStudy: string;
+  gpa: number | null;
+  startDate: string;   // ISO date string "YYYY-MM-DD"
+  endDate: string | null;
+  isPresent: boolean;
+}

@@ -2,6 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { useAboutData } from "@/hooks/use-about-data";
+import useEducationData from "@/hooks/use-education-data";
 
 function AboutSkeleton() {
   return (
@@ -15,7 +16,7 @@ function AboutSkeleton() {
 
 export default function AboutSection() {
   const { data, status, error } = useAboutData();
-  console.log("AboutSection render:", { status, error, data }); // Debug log to trace renders and state
+  const { educationData, educationStatus } = useEducationData();
   return (
     <section id="about" className="relative z-10 bg-gray-50 py-16 md:py-24">
       <div className="max-w-3xl mx-auto px-6">
@@ -42,6 +43,34 @@ export default function AboutSection() {
                   {data.shortDescription}
                 </p>
 
+
+{/* Education */}
+                {educationStatus === "success" && educationData && educationData.length > 0 && (
+                  <div className="flex flex-col gap-5 pt-8 border-t border-gray-100">
+                    <h3 className="text-xs font-semibold tracking-widest text-gray-400 uppercase">
+                      Education
+                    </h3>
+                    <div className="flex flex-col gap-6">
+                      {educationData.map((item) => (
+                        <div key={item._id} className="flex flex-col gap-0.5">
+                          <span className="text-base font-semibold text-gray-900">
+                            {item.degree} — {item.fieldOfStudy}
+                          </span>
+                          <span className="text-sm text-gray-500">
+                            {item.school}
+                            {item.gpa ? ` — GPA: ${item.gpa}` : ""}
+                          </span>
+                          <span className="text-xs text-gray-400 mt-0.5">
+                            {item.startDate}
+                            {" – "}
+                            {item.isPresent ? "Present" : item.endDate}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                
                 {/* Contact details */}
                 <div className="flex flex-col gap-3 pt-8 border-t border-gray-100">
                   <h3 className="text-xs font-semibold tracking-widest text-gray-400 uppercase">
@@ -62,6 +91,8 @@ export default function AboutSection() {
                     </div>
                   ))}
                 </div>
+
+                
 
                 {/* Links */}
                 <div className="flex flex-col gap-3 pt-8 border-t border-gray-100">
@@ -88,6 +119,8 @@ export default function AboutSection() {
                     </div>
                   ))}
                 </div>
+
+                
               </>
             )}
           </CardContent>
