@@ -3,16 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { useAboutData } from "@/hooks/use-about-data";
 import useEducationData from "@/hooks/use-education-data";
-
-function AboutSkeleton() {
-  return (
-    <div className="animate-pulse flex flex-col gap-4">
-      <div className="h-4 w-3/4 bg-gray-200 rounded" />
-      <div className="h-4 w-full bg-gray-200 rounded" />
-      <div className="h-4 w-5/6 bg-gray-200 rounded" />
-    </div>
-  );
-}
+import { AboutSkeleton } from "@/components/skeletons";
 
 export default function AboutSection() {
   const { data, status, error } = useAboutData();

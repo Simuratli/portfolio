@@ -1,3 +1,5 @@
+import type { PortableTextBlock } from "@portabletext/react";
+
 // ─── Sanity document shapes ────────────────────────────────────────────────
 
 /** Mirrors the `user` document type defined in the Sanity studio */
@@ -46,6 +48,6 @@ export interface SanityExperience {
   startDate: string; // ISO date string "YYYY-MM-DD"
   endDate: string | null; // null when isPresent is true
   isPresent: boolean;
-  description: unknown[]; // Portable Text blocks
+  description: PortableTextBlock[];
   techStack: string[];
 }
