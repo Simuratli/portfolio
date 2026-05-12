@@ -3,9 +3,7 @@ import Navbar from "@/components/navbar";
 import { articles } from "@/containers/writing-section";
 
 export const metadata = {
-  title: "Articles — Eljan Simuratli",
-  description:
-    "All articles by Eljan Simuratli on frontend development, React, TypeScript, and AI.",
+  title: "Articles",
 };
 
 export default function ArticlesPage() {

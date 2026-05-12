@@ -8,9 +8,17 @@ import {
   IconEmail,
   IconDownload,
 } from "@/assets/icons";
+import { useStore } from "@/store";
+import { useShallow } from "zustand/react/shallow";
+
 
 export default function ContactSection() {
   const [copied, setCopied] = useState(false);
+  const { userData } = useStore(
+     useShallow((s) => ({
+       userData: s.userData,
+     }))
+   );
 
   const copyPhone = () => {
     navigator.clipboard.writeText("+994508269067");
@@ -33,17 +41,14 @@ export default function ContactSection() {
 
         {/* Description */}
         <p className="text-sm md:text-base text-gray-500 leading-relaxed max-w-lg">
-          I am open to frontend engineer roles and teams where product UI meets
-          practical AI (integrations, tooling, or AI-assisted workflows). The
-          fastest way to reach me is email or LinkedIn — both are checked
-          regularly.
+          {userData?.shortDescription}
         </p>
 
         {/* Location + Phone */}
         <div className="flex items-center gap-2 text-sm text-gray-500">
-          <span>Baku, Azerbaijan</span>
+          <span>{userData?.location}</span>
           <span className="text-gray-300">·</span>
-          <span>+994 50 826 90 67</span>
+          <span>{userData?.number}</span>
           <button
             onClick={copyPhone}
             title="Copy phone number"
@@ -60,7 +65,7 @@ export default function ContactSection() {
         {/* Social buttons */}
         <div className="flex items-center gap-3">
           <a
-            href="https://linkedin.com/in/simuratli"
+            href={userData?.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -69,7 +74,7 @@ export default function ContactSection() {
             <IconLinkedIn className="w-5 h-5" />
           </a>
           <a
-            href="mailto:simuratli@gmail.com"
+            href={`mailto:${userData?.gmail}`}
             aria-label="Email"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-white border border-gray-200 text-gray-600 hover:text-gray-900 hover:border-gray-400 transition-colors shadow-sm"
           >
@@ -79,8 +84,9 @@ export default function ContactSection() {
 
         {/* Download resume */}
         <a
-          href="/resume.pdf"
-          download
+          href={userData?.cv?.asset?.url ?? "#"}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-gray-200 text-sm text-gray-700 hover:bg-gray-100 hover:border-gray-300 transition-colors shadow-sm"
         >
           <IconDownload className="w-4 h-4" />
