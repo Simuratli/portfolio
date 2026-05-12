@@ -36,3 +36,16 @@ export interface SanityEducation {
   endDate: string | null;
   isPresent: boolean;
 }
+
+// ─── Experience ───────────────────────────────────────────────────────────────
+export interface SanityExperience {
+  _id: string;
+  company: string;
+  position: string;
+  location: string;
+  startDate: string; // ISO date string "YYYY-MM-DD"
+  endDate: string | null; // null when isPresent is true
+  isPresent: boolean;
+  description: unknown[]; // Portable Text blocks
+  techStack: string[];
+}

@@ -13,6 +13,9 @@ importers:
       "@hugeicons/react":
         specifier: ^1.1.6
         version: 1.1.6(react@19.2.4)
+      "@portabletext/react":
+        specifier: ^6.2.0
+        version: 6.2.0(react@19.2.4)
       "@sanity/image-url":
         specifier: ^2.1.1
         version: 2.1.1
