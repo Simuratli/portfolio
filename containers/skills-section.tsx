@@ -1,44 +1,10 @@
-const frontendSkills = [
-  { label: "Languages", value: "JavaScript (ES2015+) · TypeScript" },
-  {
-    label: "UI Stack",
-    value:
-      "React.js · Next.js · Tailwind CSS · Styled Components · Framer Motion · Shadcn/UI",
-  },
-  { label: "State", value: "Redux / Redux Toolkit · Zustand · Context API" },
-  {
-    label: "Data, APIs & Validation",
-    value:
-      "TanStack Query · React Hook Form · RESTful APIs (Axios) · Yup / Zod",
-  },
-  { label: "Authentication", value: "JWT · OAuth · NextAuth" },
-  { label: "Testing", value: "Cypress · React Testing Library · Vitest" },
-  {
-    label: "Build & Tooling",
-    value: "Vite · Webpack · Micro Frontends · Git · GitHub · Vercel · Netlify",
-  },
-];
+"use client";
 
-const aiSkills = [
-  {
-    label: "LLM & Automation",
-    value:
-      "LLM integrations (OpenAI API) · Prompt engineering · Workflow automation",
-  },
-  {
-    label: "Learning & Exploration",
-    value:
-      "Python (coursework & hands-on projects) · RAG & embeddings (exploration in projects) · LangChain · Semantic Search",
-  },
-  { label: "AI Coding Assistants", value: "Cursor · Claude · GitHub Copilot" },
-  { label: "Product", value: "Product thinking around AI-heavy flows" },
-  {
-    label: "Design & CMS",
-    value: "Figma · Storybook · Firebase · Contentful · Sanity",
-  },
-];
+import useSkillsData from "@/hooks/use-skills-data";
 
 export default function SkillsSection() {
+  const { skillData, skillStatus } = useSkillsData();
+
   return (
     <section id="skills" className="relative z-10 bg-white py-16 md:py-24">
       <div className="max-w-5xl mx-auto px-6">
@@ -60,48 +26,34 @@ export default function SkillsSection() {
           on my CV.
         </p>
 
-        {/* Two-column skill grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0 border-t border-gray-100">
-          {/* Left — Frontend Engineering */}
-          <div className="flex flex-col">
-            <span className="text-xs font-semibold tracking-widest text-gray-400 uppercase py-6 border-b border-gray-100">
-              Frontend Engineering
-            </span>
-            {frontendSkills.map((item) => (
-              <div
-                key={item.label}
-                className="grid grid-cols-[140px_1fr] gap-4 py-5 border-b border-gray-100"
-              >
-                <span className="text-xs font-semibold tracking-widest text-gray-400 uppercase leading-relaxed">
-                  {item.label}
+        {skillStatus === "loading" || skillStatus === "idle" ? (
+          <p className="text-sm text-gray-400">Loading…</p>
+        ) : skillStatus === "error" ? (
+          <p className="text-sm text-red-400">Failed to load skills.</p>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0 border-t border-gray-100">
+            {skillData?.map((category) => (
+              <div key={category._id} className="flex flex-col">
+                <span className="text-xs font-semibold tracking-widest text-gray-400 uppercase py-6 border-b border-gray-100">
+                  {category.category}
                 </span>
-                <span className="text-sm text-gray-700 leading-relaxed">
-                  {item.value}
-                </span>
+                {category.skillGroups?.map((group) => (
+                  <div
+                    key={group.groupName}
+                    className="grid grid-cols-[160px_1fr] gap-4 py-5 border-b border-gray-100"
+                  >
+                    <span className="text-xs font-semibold tracking-widest text-gray-400 uppercase leading-relaxed">
+                      {group.groupName}
+                    </span>
+                    <span className="text-sm text-gray-700 leading-relaxed">
+                      {group.skills?.join(" · ")}
+                    </span>
+                  </div>
+                ))}
               </div>
             ))}
           </div>
-
-          {/* Right — AI & Integration */}
-          <div className="flex flex-col">
-            <span className="text-xs font-semibold tracking-widest text-gray-400 uppercase py-6 border-b border-gray-100">
-              AI &amp; Integration
-            </span>
-            {aiSkills.map((item) => (
-              <div
-                key={item.label}
-                className="grid grid-cols-[160px_1fr] gap-4 py-5 border-b border-gray-100"
-              >
-                <span className="text-xs font-semibold tracking-widest text-gray-400 uppercase leading-relaxed">
-                  {item.label}
-                </span>
-                <span className="text-sm text-gray-700 leading-relaxed">
-                  {item.value}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
+        )}
       </div>
     </section>
   );

@@ -66,3 +66,16 @@ export interface SanityProject {
   repositoryUrl: string | null;
   liveDemoUrl: string | null;
 }
+
+// ─── Skill ────────────────────────────────────────────────────────────────────
+export interface SanitySkillGroup {
+  groupName: string;
+  skills: string[];
+}
+
+export interface SanitySkill {
+  _id: string;
+  category: string;
+  order: number;
+  skillGroups: SanitySkillGroup[];
+}
