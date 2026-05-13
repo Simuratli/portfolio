@@ -51,3 +51,18 @@ export interface SanityExperience {
   description: PortableTextBlock[];
   techStack: string[];
 }
+
+// ─── Project ──────────────────────────────────────────────────────────────────
+export interface SanityProject {
+  _id: string;
+  name: string;
+  slug: { current: string };
+  description: PortableTextBlock[];
+  smallDescription: string;
+  detailedDescription: PortableTextBlock[];
+  image: { asset: { url: string } } | null;
+  featured: boolean;
+  techStack: string[];
+  repositoryUrl: string | null;
+  liveDemoUrl: string | null;
+}

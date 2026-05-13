@@ -4,14 +4,7 @@ import Link from "next/link";
 import { motion, useAnimation } from "framer-motion";
 import { useState } from "react";
 import { ArrowRightIcon } from "lucide-react";
-
-const projects = [
-  { title: "StartGlobal", href: "#" },
-  { title: "Payper", href: "#" },
-  { title: "Vipline", href: "#" },
-  { title: "Matafy", href: "#" },
-  { title: "Fleetsu", href: "#" },
-];
+import useProjectsData from "@/hooks/use-projects-data";
 
 function ProjectItem({ title, href }: { title: string; href: string }) {
   const [hovered, setHovered] = useState(false);
@@ -80,6 +73,8 @@ function ProjectItem({ title, href }: { title: string; href: string }) {
 }
 
 export default function ProjectList() {
+  const { projectData, projectStatus } = useProjectsData();
+
   return (
     <div className="flex flex-col">
       <p className="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-4">
@@ -87,13 +82,19 @@ export default function ProjectList() {
       </p>
 
       <ul>
-        {projects.map((project) => (
-          <ProjectItem
-            key={project.title}
-            title={project.title}
-            href={project.href}
-          />
-        ))}
+        {projectStatus === "loading" || projectStatus === "idle" ? (
+          <li className="py-4 text-sm text-gray-400">Loading…</li>
+        ) : projectStatus === "error" ? (
+          <li className="py-4 text-sm text-red-400">Failed to load projects.</li>
+        ) : (
+          projectData?.map((project) => (
+            <ProjectItem
+              key={project._id}
+              title={project.name}
+              href={project.liveDemoUrl ?? `/projects/${project.slug.current}`}
+            />
+          ))
+        )}
       </ul>
 
       <Link
