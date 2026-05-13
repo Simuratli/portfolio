@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import useProjectsData from "@/hooks/use-projects-data";
+import {MAX_VISIBLE_PROJECTS_SELECTED_PROJECTS } from "@/constants/projects";
 
 export default function SelectedWorks() {
   const { projectData, projectStatus } = useProjectsData();
@@ -57,7 +58,7 @@ export default function SelectedWorks() {
 
             {/* Rest — 2-column grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {rest.map((project) => (
+              {rest.slice(0, MAX_VISIBLE_PROJECTS_SELECTED_PROJECTS).map((project) => (
                 <Card
                   key={project._id}
                   className="group transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-gray-300 cursor-pointer"

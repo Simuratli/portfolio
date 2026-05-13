@@ -79,3 +79,13 @@ export interface SanitySkill {
   order: number;
   skillGroups: SanitySkillGroup[];
 }
+
+// ─── Writing ──────────────────────────────────────────────────────────────────
+export interface SanityWriting {
+  _id: string;
+  name: string;
+  url: string | null;
+  date: string; // ISO date string "YYYY-MM-DD"
+  description: PortableTextBlock[];
+  tags: string[];
+}

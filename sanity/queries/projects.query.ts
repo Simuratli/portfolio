@@ -3,7 +3,7 @@ import type { SanityProject } from "../types";
 import { client } from "../client";
 
 export const projectsQuery = groq`
-*[_type == "project"] | order(_createdAt desc) {
+*[_type == "project"] | order(_createdAt asc) {
     _id,
     name,
     slug,

@@ -5,6 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useState } from "react";
 import { ArrowRightIcon } from "lucide-react";
 import useProjectsData from "@/hooks/use-projects-data";
+import { MAX_VISIBLE_PROJECTS } from "@/constants/projects";
 
 function ProjectItem({ title, href }: { title: string; href: string }) {
   const [hovered, setHovered] = useState(false);
@@ -87,7 +88,7 @@ export default function ProjectList() {
         ) : projectStatus === "error" ? (
           <li className="py-4 text-sm text-red-400">Failed to load projects.</li>
         ) : (
-          projectData?.map((project) => (
+          projectData?.slice(0, MAX_VISIBLE_PROJECTS)?.map((project) => (
             <ProjectItem
               key={project._id}
               title={project.name}
