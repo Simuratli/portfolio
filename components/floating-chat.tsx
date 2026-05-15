@@ -11,7 +11,7 @@ type Message = {
 export default function FloatingChat() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: "assistant", text: "Hey! How can I help you?" },
+    { role: "assistant", text: "What do you want to learn about Eljan?" },
   ]);
   const [input, setInput] = useState("");
   const bottomRef = useRef<HTMLDivElement>(null);
