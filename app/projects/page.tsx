@@ -14,7 +14,6 @@ export default async function ProjectsPage() {
   const projects = await fetchProjects();
   const featured = projects.find((p) => p.featured) ?? null;
   const rest = projects.filter((p) => !p.featured);
-
   return (
     <main className="min-h-screen bg-gray-50">
       <div className="fixed top-0 left-0 right-0 z-50">
