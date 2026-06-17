@@ -59,55 +59,67 @@ export default async function ProjectsPage() {
 
         {/* Featured */}
         {featured && (
-        <Card className="mb-5 group transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-gray-300 cursor-pointer">
-          <CardContent className="p-8 md:p-10 flex flex-col gap-6">
-            <div className="flex items-center justify-between flex-wrap gap-3">
-              <span className="px-3 py-1 rounded-full border border-gray-200 text-xs font-medium text-gray-500 tracking-widest uppercase">
-                Featured Project
-              </span>
-            </div>
-            <div className="flex flex-col gap-3">
-              <h2 className="text-xl md:text-2xl font-bold text-gray-900 leading-snug group-hover:text-gray-700 transition-colors">
-                {featured.name}
-              </h2>
-              <p className="text-sm md:text-base text-gray-500 leading-relaxed">
-                {featured.smallDescription}
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              {featured.techStack?.map((tag) => (
-                <span key={tag} className="text-xs text-gray-400">
-                  {tag}
+        <Link
+          href={featured.liveDemoUrl || featured.repositoryUrl || "#"}
+          target={featured.liveDemoUrl || featured.repositoryUrl ? "_blank" : undefined}
+          rel={featured.liveDemoUrl || featured.repositoryUrl ? "noopener noreferrer" : undefined}
+          className="block"
+        >
+          <Card className="mb-5 group transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-gray-300 cursor-pointer">
+            <CardContent className="p-8 md:p-10 flex flex-col gap-6">
+              <div className="flex items-center justify-between flex-wrap gap-3">
+                <span className="px-3 py-1 rounded-full border border-gray-200 text-xs font-medium text-gray-500 tracking-widest uppercase">
+                  Featured Project
                 </span>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+              </div>
+              <div className="flex flex-col gap-3">
+                <h2 className="text-xl md:text-2xl font-bold text-gray-900 leading-snug group-hover:text-gray-700 transition-colors">
+                  {featured.name}
+                </h2>
+                <p className="text-sm md:text-base text-gray-500 leading-relaxed">
+                  {featured.smallDescription}
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4">
+                {featured.techStack?.map((tag) => (
+                  <span key={tag} className="text-xs text-gray-400">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
         )}
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {rest.map((project) => (
-            <Card
+            <Link
               key={project._id}
-              className="group transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-gray-300 cursor-pointer"
+              href={project.liveDemoUrl || project.repositoryUrl || "#"}
+              target={project.liveDemoUrl || project.repositoryUrl ? "_blank" : undefined}
+              rel={project.liveDemoUrl || project.repositoryUrl ? "noopener noreferrer" : undefined}
+              className="block"
             >
-              <CardContent className="p-6 md:p-8 flex flex-col gap-4 h-full">
-                <h2 className="text-base md:text-lg font-bold text-gray-900 leading-snug group-hover:text-gray-700 transition-colors">
-                  {project.name}
-                </h2>
-                <p className="text-sm text-gray-500 leading-relaxed flex-1">
-                  {project.smallDescription}
-                </p>
-                <div className="flex flex-wrap gap-3 pt-2">
-                  {project.techStack?.map((tag) => (
-                    <span key={tag} className="text-xs text-gray-400">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+              <Card className="group transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-gray-300 cursor-pointer">
+                <CardContent className="p-6 md:p-8 flex flex-col gap-4 h-full">
+                  <h2 className="text-base md:text-lg font-bold text-gray-900 leading-snug group-hover:text-gray-700 transition-colors">
+                    {project.name}
+                  </h2>
+                  <p className="text-sm text-gray-500 leading-relaxed flex-1">
+                    {project.smallDescription}
+                  </p>
+                  <div className="flex flex-wrap gap-3 pt-2">
+                    {project.techStack?.map((tag) => (
+                      <span key={tag} className="text-xs text-gray-400">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
